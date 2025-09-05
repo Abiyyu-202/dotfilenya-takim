@@ -1,0 +1,133 @@
+{
+    "reload_style_on_change": true,
+    "height": 30,
+    "spacing": 4,
+    "modules-left": [
+        "custom/launcher",
+        "hyprland/workspaces",
+        "hyprland/submap"
+    ],
+    "modules-center": [
+        "hyprland/window"
+    ],
+    "modules-right": [
+        "pulseaudio",
+        "network",
+        "cpu",
+        "memory",
+        "temperature",
+        "battery",
+        "clock",
+        "tray"
+    ],
+    
+    // Modules configuration
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "format-icons": {
+            "active": "●",
+            "default": "○",
+            "urgent": "⚠"
+        },
+        "on-click": "activate"
+    },
+    
+    "hyprland/submap": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    
+    "hyprland/window": {
+        "format": "{} {}",
+        "separate-outputs": true,
+        "max-length": 50,
+        "swap-icon-label": true
+    },
+    
+    "clock": {
+        "interval": 1,
+        "format": "{:%H:%M}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    
+    "cpu": {
+        "interval": 0.1,
+        "format": "{usage}% ",
+        "tooltip": false
+    },
+    
+    "memory": {
+        "interval": 1,
+        "format": "{}% "
+    },
+    
+    "temperature": {
+        "critical-threshold": 80,
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", "", ""]
+    },
+    
+    "battery": {
+        "interval": 1,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-full": " {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    
+    "network": {
+        "interval": 5,
+        "format-wifi": " {essid} ({signalStrength}%)",
+        "format-ethernet": " {ifname}",
+        "format-disconnected": " Disconnected",
+        "tooltip-format": "{ifname}\nIP: {ipaddr}\nStrength: {signalStrength}%"
+    },
+    
+    "pulseaudio": {
+        "interval": 5,
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": " Muted",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol",
+        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
+        "scroll-step": 5
+    },
+    
+    "tray": {
+        "spacing": 10
+    },
+    
+    "custom/launcher": {
+        "format": "", // Fedora icon
+        "on-click": "wofi --show drun",
+        "tooltip": false
+    },
+    "custom/power": {
+    "format": "⏻ ",
+    "tooltip": false,
+    "menu": "on-click", // Aksi untuk memunculkan menu
+    "menu-file": "/home/toheartz/.config/waybar/power-menu.xml", // Path ke file menu
+    "menu-actions": {
+        "shutdown": "systemctl poweroff",
+        "reboot": "systemctl reboot",
+        "suspend": "systemctl suspend",
+        "logout": "hyprctl dispatch exit" // Ganti sesuai WM/Compositor
+        }
+    }
+}
