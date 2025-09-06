@@ -18,7 +18,8 @@
         "temperature",
         "battery",
         "clock",
-        "tray"
+        "tray",
+        "custom/power"
     ],
     
     // Modules configuration
@@ -82,7 +83,7 @@
     },
     
     "network": {
-        "interval": 5,
+        "interval": 1,
         "format-wifi": " {essid} ({signalStrength}%)",
         "format-ethernet": " {ifname}",
         "format-disconnected": " Disconnected",
@@ -110,7 +111,7 @@
     },
     
     "tray": {
-        "spacing": 10
+        "spacing": 18
     },
     
     "custom/launcher": {
@@ -119,15 +120,15 @@
         "tooltip": false
     },
     "custom/power": {
-    "format": "⏻ ",
+    "format": "⏻ ", // Ikon power
     "tooltip": false,
     "menu": "on-click", // Aksi untuk memunculkan menu
-    "menu-file": "/home/toheartz/.config/waybar/power-menu.xml", // Path ke file menu
+    "menu-file": "~/.config/waybar/power-menu.xml", // Path ke file menu
     "menu-actions": {
         "shutdown": "systemctl poweroff",
         "reboot": "systemctl reboot",
         "suspend": "systemctl suspend",
-        "logout": "hyprctl dispatch exit" // Ganti sesuai WM/Compositor
-        }
+        "logout": "hyprctl dispatch exit" // Ganti perintah ini jika tidak pakai Hyprland
+        }   
     }
 }
