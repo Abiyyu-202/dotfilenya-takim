@@ -116,7 +116,7 @@
     
     "custom/launcher": {
         "format": "", // Fedora icon
-        "on-click": "wofi --show drun",
+        "on-click": "wofi --show drun", //memunculkan aplikasi menu
         "tooltip": false
     },
     "custom/power": {
