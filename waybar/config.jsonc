@@ -115,20 +115,20 @@
     },
     
     "custom/launcher": {
-        "format": "", // Fedora icon
+        "format": "", // Fedora icon
         "on-click": "wofi --show drun", // ini buat buka aplikasi
         "tooltip": false
     },
     "custom/power": {
     "format": "⏻ ", // Ikon power
     "tooltip": false,
-    "menu": "on-click", // Aksi untuk memunculkan menu
+    "menu": "on-click", // munculin menunya
     "menu-file": "~/.config/waybar/power-menu.xml", // Path ke file menu
     "menu-actions": {
         "shutdown": "systemctl poweroff",
         "reboot": "systemctl reboot",
         "suspend": "systemctl suspend",
-        "logout": "hyprctl dispatch exit" // Ganti perintah ini jika tidak pakai Hyprland
+        "logout": "hyprctl dispatch exit"
         }   
     }
 }
