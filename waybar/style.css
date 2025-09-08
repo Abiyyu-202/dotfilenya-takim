@@ -152,9 +152,9 @@ button:hover {
 #custom-launcher {
     background-color: #0A0A0A;
     color: #E5E5E5;
-    padding: 0 12px;
+    padding: 0 8px;
     margin-left: 6px;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 #window {
