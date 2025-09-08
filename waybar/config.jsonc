@@ -115,7 +115,7 @@
     },
     
     "custom/launcher": {
-        "format": "", // Fedora icon
+        "format": " 🦊", //fox
         "on-click": "wofi --show drun", // ini buat buka aplikasi
         "tooltip": false
     },
