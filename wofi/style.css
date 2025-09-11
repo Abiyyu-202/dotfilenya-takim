@@ -1,0 +1,69 @@
+/* Gaya umum untuk window Wofi */
+window {
+    margin: 5px;
+    border: 1px solid rgba(100, 114, 125, 0.6);
+    background-color: rgba(10, 10, 10, 0.95); /* #0A0A0A dengan transparansi */
+    border-radius: 8px;
+    font-family: 'JetBrainsMono Nerd Font', 'Font Awesome 6 Free', monospace;
+}
+
+/* Kotak input pencarian */
+#input {
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgba(60, 60, 60, 0.8);
+    color: #E5E5E5;
+    font-size: 14px;
+}
+
+/* Kotak dalam (tempat daftar entri) */
+#inner-box {
+    margin: 5px;
+    padding: 10px;
+    background-color: transparent;
+}
+
+/* Kotak luar */
+#outer-box {
+    margin: 5px;
+    background-color: transparent;
+}
+
+/* Scrollbar */
+#scroll {
+    margin: 5px;
+    border: none;
+    background-color: transparent;
+}
+
+/* Setiap entri dalam daftar */
+#entry {
+    padding: 8px;
+    border-radius: 4px;
+    background-color: transparent;
+    color: #E5E5E5;
+}
+
+/* Entri yang terpilih (difokuskan) */
+#entry:selected {
+    background-color: rgba(166, 218, 149, 0.3); /* Warna hijau muda transparan, mirip dengan active workspace di Waybar */
+    border: none;
+}
+
+/* Teks dalam entri */
+#text {
+    color: #E5E5E5;
+    font-size: 13px;
+}
+
+/* Teks dalam entri yang terpilih */
+#text:selected {
+    color: #FFFFFF; /* Teks putih saat dipilih untuk kontras yang baik */
+}
+
+/* Gambar/ikon dalam entri */
+#img {
+    margin-right: 10px; /* Spasi antara ikon dan teks */
+}

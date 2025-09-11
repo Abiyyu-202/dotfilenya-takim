@@ -1,0 +1,18 @@
+# Mode drun untuk aplikasi
+show=drun
+# Izinkan ikon aplikasi
+allow_images=false
+# Lebar window (50% layar)
+width=40%
+# Tinggi window (40% layar)
+height=40%
+# Teks prompt
+prompt=Search something....
+# Posisi window (center, top, bottom, dll.)
+location=center
+# Mode pencarian fuzzy
+matching=fuzzy
+# Pencarian tidak case-sensitive
+insensitive=true
+# Sembunyikan scrollbar
+hide_scroll=true
