@@ -40,7 +40,7 @@
     "custom/window-title": {
         "exec": "~/.config/waybar/scripts/window-title.sh",
         "return-type": "json", 
-        "interval": 0.1,
+        "interval": 1,
         "max-length": 50
     },
     
