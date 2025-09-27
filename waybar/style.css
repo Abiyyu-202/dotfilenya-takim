@@ -55,7 +55,6 @@ button:hover {
     animation: fadeInActive 0.5s ease-in-out;
 }
 
-/* Keyframes: Hanya fade opacity (tanpa margin-left shift) */
 @keyframes fadeInActive {
     from {
         opacity: 0.3;
