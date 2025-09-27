@@ -39,11 +39,10 @@
     
     // Custom window-title module (ganti hyprland/window)
     "custom/window-title": {
-        "exec": "~/.config/waybar/scripts/window-title.sh",  // Path ke script
-        "interval": 1,  // Update setiap 1 detik (efisien, cukup untuk window change)
-        "format": "{}",  // Output script langsung (icon + title, atau empty)
-        "max-length": 50,  // Batasi panjang teks
-        "tooltip": false  // Opsional: No tooltip
+        "exec": "~/.config/waybar/scripts/window-title.sh",
+        "return-type": "json", // Add this line
+        "interval": 0.1,
+        "max-length": 50
     },
     
     "clock": {
