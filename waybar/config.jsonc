@@ -40,7 +40,7 @@
     // Custom window-title module (ganti hyprland/window)
     "custom/window-title": {
         "exec": "~/.config/waybar/scripts/window-title.sh",
-        "return-type": "json", // Add this line
+        "return-type": "json", 
         "interval": 0.1,
         "max-length": 50
     },

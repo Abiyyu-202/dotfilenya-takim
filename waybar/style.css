@@ -180,7 +180,6 @@ button:hover {
     font-size: 14px;
 }
 
-/* Custom Window Title: Animasi fade + padding (memanjang/memendek 0.3s), hilang total saat script output empty */
 #custom-window-title {
     margin: 3px;
     padding: 0 12px;
