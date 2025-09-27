@@ -8,7 +8,7 @@
         "hyprland/submap"
     ],
     "modules-center": [
-        "custom/window-title"  // Ganti dari "hyprland/window" ke custom
+        "custom/window-title" 
     ],
     "modules-right": [
         "pulseaudio",
