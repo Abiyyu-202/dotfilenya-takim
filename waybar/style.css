@@ -24,22 +24,45 @@ button {
 
 button:hover {
     background: rgba(0, 0, 0, 0.2);
-    box-shadow: inset 0 -3px #ffffff;
+}
+
+/* Workspaces: Bentuk tombol seperti module lain + efek fade opacity saja (tanpa gerak/shift, durasi 0.5s) */
+#workspaces {
+    transition: opacity 0.5s ease-in-out;
 }
 
 #workspaces button {
-    padding: 0 8px;
-    background-color: transparent;
+    padding: 0 10px;
+    background-color: #0A0A0A;
     color: #e5e5e5;
+    border-radius: 8px;
+    margin: 4px 2px;
+    transition: opacity 0.5s ease-in-out, background-color 0.3s ease-in-out;
 }
 
 #workspaces button.active {
-    background-color: rgba(166, 218, 149, 0);
-    box-shadow: inset 0 -3px #a6da95;
+    background-color: #000000;
+    opacity: 1;
+    animation: fadeInActive 0.5s ease-in-out;
+}
+
+#workspaces button:not(.active) {
+    opacity: 0.6;
 }
 
 #workspaces button.urgent {
     background-color: #ed8796;
+    animation: fadeInActive 0.5s ease-in-out;
+}
+
+/* Keyframes: Hanya fade opacity (tanpa margin-left shift) */
+@keyframes fadeInActive {
+    from {
+        opacity: 0.3;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 #clock,
@@ -70,14 +93,14 @@ button:hover {
 }
 
 #battery {
-    color: #0A0A0A;
     background-color: #0A0A0A;
     color: #E5E5E5;
 }
 
-#battery.charging, #battery.plugged {
-    color: #e5e5e5;
-    background-color: #8F785E;
+#battery.charging,
+#battery.plugged {
+    color: black;
+    background-color: #f89987;
 }
 
 #battery.critical:not(.charging) {
@@ -108,7 +131,7 @@ button:hover {
 }
 
 #temperature {
-    background-color: #0A0A0A   ;
+    background-color: #0A0A0A;
     color: #E5E5E5;
 }
 
@@ -137,7 +160,7 @@ button:hover {
 }
 
 #tray {
-    background-color:#0A0A0A;
+    background-color: #0A0A0A;
 }
 
 #tray > .passive {
@@ -157,27 +180,30 @@ button:hover {
     font-size: 14px;
 }
 
-#window {
+/* Custom Window Title: Animasi fade + padding (memanjang/memendek 0.3s), hilang total saat script output empty */
+#custom-window-title {
     margin: 3px;
     padding: 0 12px;
     border-radius: 10px;
     background-color: #0A0A0A;
     color: #E5E5E5;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out, padding 0.3s ease-in-out, margin 0.3s ease-in-out;
 }
 
 #custom-power {
-    background-color: #0A0A0A;  
-    color: #E5E5E5;                          
-    padding: 0 10px;                       
-    border-radius: 8px;                    
-    margin: 4px 2px;                       
-    font-size: 14px;                       
-    min-height: 0;                       
+    background-color: #0A0A0A;
+    color: #E5E5E5;
+    padding: 0 10px;
+    border-radius: 8px;
+    margin: 4px 2px;
+    font-size: 14px;
+    min-height: 0;
 }
 
 #custom-power:hover {
-    background-color: #ed8796; /* Efek hover yang sedikit transparan */
-    color: #FFFFFF; /* Warna teks saat hover */
+    background-color: #ed8796;
+    color: #FFFFFF;
 }
 
 menu {
@@ -186,11 +212,13 @@ menu {
     color: #ffffff;
     padding: 10px;
 }
+
 menuitem {
     border-radius: 5px;
     padding: 5px 10px;
     margin: 2px 0px;
 }
+
 menuitem:hover {
     background-color: rgba(70, 70, 70, 0.95);
 }
