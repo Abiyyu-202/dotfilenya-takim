@@ -26,24 +26,43 @@ button:hover {
     background: rgba(0, 0, 0, 0.2);
 }
 
-/* Workspaces: Bentuk tombol seperti module lain + efek fade opacity saja (tanpa gerak/shift, durasi 0.5s) */
 #workspaces {
-    transition: opacity 0.5s ease-in-out;
-}
-
-#workspaces button {
-    padding: 0 10px;
     background-color: #0A0A0A;
-    color: #e5e5e5;
-    border-radius: 8px;
+    border-radius: 6px; /* Changed from 4px to 6px */
     margin: 4px 2px;
-    transition: opacity 0.5s ease-in-out, background-color 0.3s ease-in-out;
+    padding: 0px;
 }
 
+/* Gaya untuk individual workspace button */
+#workspaces button {
+    padding: 0 12px;
+    background-color: transparent;
+    color: #e5e5e5;
+    border-radius: 0;
+    margin: 0;
+    border: none;
+    box-shadow: none;
+}
+
+/* Beri border radius hanya pada tombol pertama dan terakhir */
+#workspaces button:first-child {
+    border-top-left-radius: 6px; /* Changed from 4px to 6px */
+    border-bottom-left-radius: 6px;
+}
+#workspaces button:last-child {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+/* Gaya untuk workspace yang aktif */
 #workspaces button.active {
     background-color: #000000;
-    opacity: 1;
-    animation: fadeInActive 0.5s ease-in-out;
+    color: #ffffff;
+}
+
+/* Gaya saat hover */
+#workspaces button:hover {
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 #workspaces button:not(.active) {
@@ -64,6 +83,7 @@ button:hover {
     }
 }
 
+/* Modul-modul utama dengan rounded konsisten 6px */
 #clock,
 #battery,
 #cpu,
@@ -78,10 +98,10 @@ button:hover {
 #idle_inhibitor,
 #scratchpad,
 #custom-launcher {
-    padding: 0 10px;
+    padding: 0 12px;
     color: #E5E5E5;
     background-color: #0A0A0A;
-    border-radius: 8px;
+    border-radius: 6px; /* Changed from 4px to 6px */
     margin: 4px 2px;
 }
 
@@ -89,6 +109,8 @@ button:hover {
     background-color: #0A0A0A;
     font-weight: bold;
     color: #E5E5E5;
+    padding: 0 14px;
+    margin: 4px 6px; /* Added more side margin */
 }
 
 #battery {
@@ -174,7 +196,7 @@ button:hover {
 #custom-launcher {
     background-color: #0A0A0A;
     color: #E5E5E5;
-    padding: 0 8px;
+    padding: 0 12px;
     margin-left: 6px;
     font-size: 14px;
 }
@@ -182,7 +204,7 @@ button:hover {
 #custom-window-title {
     margin: 3px;
     padding: 0 12px;
-    border-radius: 10px;
+    border-radius: 6px; /* Changed from 4px to 6px */
     background-color: #0A0A0A;
     color: #E5E5E5;
     opacity: 1;
@@ -192,9 +214,9 @@ button:hover {
 #custom-power {
     background-color: #0A0A0A;
     color: #E5E5E5;
-    padding: 0 10px;
-    border-radius: 8px;
-    margin: 4px 2px;
+    padding: 0 14px;
+    border-radius: 6px; /* Changed from 4px to 6px */
+    margin: 4px 6px; /* Added more side margin */
     font-size: 14px;
     min-height: 0;
 }

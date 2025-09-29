@@ -2,10 +2,15 @@
     "reload_style_on_change": true,
     "height": 30,
     "spacing": 4,
+    "expand-left": true,    // Biarkan modul kiri memenuhi ruang
+    "expand-right": true,   // Biarkan modul kanan memenuhi ruang
+    "fixed-center": true,  // Pusat tidak lagi kaku, bisa terdorong
+
     "modules-left": [
-        "custom/launcher",
+        "clock",
         "hyprland/workspaces",
         "hyprland/submap"
+        
     ],
     "modules-center": [
         "custom/window-title" 
@@ -13,11 +18,7 @@
     "modules-right": [
         "pulseaudio",
         "network",
-        "cpu",
-        "memory",
-        "temperature",
         "battery",
-        "clock",
         "tray",
         "custom/power"
     ],
