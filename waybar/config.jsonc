@@ -4,25 +4,27 @@
     "spacing": 4,
     "expand-left": true,    // Biarkan modul kiri memenuhi ruang
     "expand-right": true,   // Biarkan modul kanan memenuhi ruang
-    "fixed-center": true,  // Pusat tidak lagi kaku, bisa terdorong
+    "fixed-center": true,   // Pusat tidak lagi kaku, bisa terdorong
 
     "modules-left": [
         "clock",
         "hyprland/workspaces",
         "hyprland/submap"
-        
     ],
+
     "modules-center": [
-        "custom/window-title" 
+        "custom/window-title"
     ],
+
     "modules-right": [
-        "pulseaudio",
         "network",
+        "pulseaudio",
         "battery",
+        "power-profiles-daemon", // <-- icon power profile setelah baterai
         "tray",
         "custom/power"
     ],
-    
+
     // Modules configuration
     "hyprland/workspaces": {
         "format": "{name}",
@@ -33,42 +35,42 @@
         },
         "on-click": "activate"
     },
-    
+
     "hyprland/submap": {
         "format": "<span style=\"italic\">{}</span>"
     },
-    
+
     "custom/window-title": {
         "exec": "~/.config/waybar/scripts/window-title.sh",
-        "return-type": "json", 
+        "return-type": "json",
         "interval": 1,
         "max-length": 50
     },
-    
+
     "clock": {
         "interval": 1,
         "format": "{:%H:%M}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
     },
-    
+
     "cpu": {
         "interval": 0.1,
         "format": "{usage}% ",
         "tooltip": false
     },
-    
+
     "memory": {
         "interval": 1,
         "format": "{}% "
     },
-    
+
     "temperature": {
         "critical-threshold": 80,
         "format": "{temperatureC}°C {icon}",
         "format-icons": ["", "", "", ""]
     },
-    
+
     "battery": {
         "interval": 1,
         "states": {
@@ -82,7 +84,17 @@
         "format-alt": "{time} {icon}",
         "format-icons": ["", "", "", "", ""]
     },
-    
+
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "Power profile: {profile}",
+        "format-icons": {
+            "performance": "🚀",
+            "balanced": "⚖️",
+            "power-saver": "💡"
+        }
+    },
+
     "network": {
         "interval": 1,
         "format-wifi": " {essid} ({signalStrength}%)",
@@ -90,7 +102,7 @@
         "format-disconnected": " Disconnected",
         "tooltip-format": "{ifname}\nIP: {ipaddr}\nStrength: {signalStrength}%"
     },
-    
+
     "pulseaudio": {
         "interval": 5,
         "format": "{volume}% {icon}",
@@ -110,26 +122,27 @@
         "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
         "scroll-step": 5
     },
-    
+
     "tray": {
         "spacing": 18
     },
-    
+
     "custom/launcher": {
-        "format": " ", //logo aplikasi
-        "on-click": "wofi --show drun", // ini buat buka aplikasi
+        "format": " ", // logo aplikasi
+        "on-click": "wofi --show drun", // buka aplikasi
         "tooltip": false
     },
+
     "custom/power": {
-    "format": "⏻ ", // Ikon power
-    "tooltip": false,
-    "menu": "on-click", // munculin menunya
-    "menu-file": "~/.config/waybar/power-menu.xml", // Path ke file menu
-    "menu-actions": {
-        "shutdown": "systemctl poweroff",
-        "reboot": "systemctl reboot",
-        "suspend": "systemctl suspend",
-        "logout": "hyprctl dispatch exit"
-        }   
+        "format": "⏻ ", // Ikon power
+        "tooltip": false,
+        "menu": "on-click", // munculin menunya
+        "menu-file": "~/.config/waybar/power-menu.xml", // Path ke file menu
+        "menu-actions": {
+            "shutdown": "systemctl poweroff",
+            "reboot": "systemctl reboot",
+            "suspend": "systemctl suspend",
+            "logout": "hyprctl dispatch exit"
+        }
     }
 }

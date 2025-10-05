@@ -242,3 +242,15 @@ menuitem {
 menuitem:hover {
     background-color: rgba(70, 70, 70, 0.95);
 }
+
+#power-profiles-daemon {
+    background-color: #0A0A0A;
+    color: #E5E5E5;
+    padding: 0 12px;
+    border-radius: 6px;
+    margin: 4px 2px;
+}
+
+#power-profiles-daemon:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+}
