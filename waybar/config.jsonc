@@ -7,13 +7,12 @@
     "fixed-center": true,   // Pusat tidak lagi kaku, bisa terdorong
 
     "modules-left": [
-        "clock",
         "hyprland/workspaces",
         "hyprland/submap"
     ],
 
     "modules-center": [
-        "custom/window-title"
+        "clock"
     ],
 
     "modules-right": [
