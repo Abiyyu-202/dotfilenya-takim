@@ -48,6 +48,7 @@ button:hover {
 #workspaces button:first-child {
     border-top-left-radius: 6px; /* Changed from 4px to 6px */
     border-bottom-left-radius: 6px;
+    font-weight: bold;
 }
 #workspaces button:last-child {
     border-top-right-radius: 6px;
@@ -56,8 +57,9 @@ button:hover {
 
 /* Gaya untuk workspace yang aktif */
 #workspaces button.active {
-    background-color: #000000;
-    color: #ffffff;
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: bold;
 }
 
 /* Gaya saat hover */
@@ -106,9 +108,9 @@ button:hover {
 }
 
 #clock {
-    background-color: #0A0A0A;
+    background-color: #ffffff;
     font-weight: bold;
-    color: #E5E5E5;
+    color: #000000;
     padding: 0 14px;
     margin: 4px 6px; /* Added more side margin */
 }
@@ -121,7 +123,7 @@ button:hover {
 #battery.charging,
 #battery.plugged {
     color: black;
-    background-color: #f89987;
+    background-color: #ffffff;
 }
 
 #battery.critical:not(.charging) {
@@ -162,8 +164,8 @@ button:hover {
 }
 
 #network {
-    background-color: #0A0A0A;
-    color: #E5E5E5;
+    background-color: #ffffff;
+    color: #000000;
 }
 
 #network.disconnected {
@@ -172,8 +174,8 @@ button:hover {
 }
 
 #pulseaudio {
-    background-color: #0A0A0A;
-    color: #E5E5E5;
+    background-color: #ffffff;
+    color: #000000;
 }
 
 #pulseaudio.muted {
@@ -212,8 +214,8 @@ button:hover {
 }
 
 #custom-power {
-    background-color: #0A0A0A;
-    color: #E5E5E5;
+    background-color: #ffffff;
+    color: #000000;
     padding: 0 14px;
     border-radius: 6px; /* Changed from 4px to 6px */
     margin: 4px 6px; /* Added more side margin */
