@@ -1,4 +1,4 @@
-<h1 align="center">Sebuah Dotfile iseng</h1>
+<h1 align="center">Sebuah Dotfile Iseng</h1>
 
 <p align="center">
   <b>Dotfiles pribadi untuk setup my linux aku</b><br>
@@ -19,8 +19,8 @@ Setup ini umumnya pakai paket berikut (atau setara di distro kamu):
 
 ```bash
 # Fedora (beberapa paket mungkin beda nama atau perlu COPR)
-sudo dnf install wlroots waybar wofi zsh pavucontrol brightnessctl kitty nautilus \
-  && echo "Periksa juga: swww, swaync, bibata-cursor-theme, JetBrains Mono, Cascadia Code"
+sudo dnf install wlroots waybar wofi zsh pavucontrol brightnessctl foot nautilus \
+  (loh kenapa dikit di fedora?, jawaban nya karena di fedora ribet, harus pake ini itu, itu yang di contoh yang avalible di dnf aja)
 
 # Arch Linux
 sudo pacman -S wlroots zsh waybar wofi swaync pavucontrol swww grim brightnessctl \
@@ -32,6 +32,8 @@ sudo pacman -S wlroots zsh waybar wofi swaync pavucontrol swww grim brightnessct
 > dnf search <nama_paket>
 > ```
 > atau gunakan **COPR** / build manual.
+
+Intinya, di dalam situ harus ada waybar, wofi, notifier (di config ini aku pakai swaync), pavucontrol, brightnessctl, cursor (opsional tapi menambah estetika), terminal (disini aku pakai foot), file manager, sama perlu ttf-jetbrains-mono-nerd
 
 ---
 
@@ -65,8 +67,8 @@ dotfilenya-takim/
 
 ## 🧠 Rencana Ke Depan
 
-MUNGKIN nanti bakal nambah konfigurasi buat **WM lain**, tapi untuk sekarang...  
-> “Aku males ges nambah config, kreativitas owner nya setipis tisu”
+**MUNGKIN** nanti bakal nambah konfigurasi buat WM lain, tapi untuk sekarang...  
+> “Aku males ges nambah config, kreativitas ku nya setipis tisu”
 
 ---
 
