@@ -27,11 +27,7 @@ sudo pacman -S wlroots zsh waybar wofi swaync pavucontrol swww grim brightnessct
   ttf-jetbrains-mono-nerd ttf-cascadia-code-nerd bibata-cursor-theme nautilus kitty
 ```
 
-> 💡 Jika ada paket yang tidak ditemukan, coba cari dengan:
-> ```bash
-> dnf search <nama_paket>
-> ```
-> atau gunakan **COPR** / build manual.
+> 💡 Jika ada paket yang tidak ditemukan, cek lagi perlu repo apa atau kemungkinan buruknya **BUILD MANUAL** (god i love fedora)
 
 Intinya, di dalam situ harus ada waybar, wofi, notifier (di config ini aku pakai swaync), pavucontrol, brightnessctl, cursor (opsional tapi menambah estetika), terminal (disini aku pakai foot), file manager, sama perlu ttf-jetbrains-mono-nerd
 
