@@ -21,5 +21,10 @@
         <property name="label">Shutdown</property>
       </object>
     </child>
+    <child>
+      <object class="GtkMenuItem" id="lock">
+        <property name="label">Lock</property>
+      </object>
+    </child>
   </object>
 </interface>

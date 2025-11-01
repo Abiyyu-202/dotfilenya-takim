@@ -2,74 +2,60 @@
     font-family: 'JetBrainsMono Nerd Font', 'Font Awesome 6 Free', 'Font Awesome 6 Brands', monospace;
     font-size: 13px;
     min-height: 0;
+    border-radius: 0;
+    margin: 0;
 }
 
 window#waybar {
-    background-color: rgba(128, 101, 71, 0);
-    color: #cdd6f4;
-    border-bottom: 1px solid rgba(100, 114, 125, 0);
-    transition-property: background-color;
-    transition-duration: .5s;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #E5E5E5;
+    border: none;
+    transition: none;
+    margin: 0;
+    padding: 0;
 }
 
 window#waybar.hidden {
     opacity: 0.6;
 }
 
+/* Tombol umum */
 button {
-    box-shadow: inset 0 -3px transparent;
+    box-shadow: none;
     border: none;
     border-radius: 0;
+    margin: 0;
+    padding: 0;
 }
 
 button:hover {
-    background: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
+/* Workspace container */
 #workspaces {
-    background-color: #0A0A0A;
-    border-radius: 6px; /* Changed from 4px to 6px */
-    margin: 4px 2px;
-    padding: 0px;
-}
-
-/* Gaya untuk individual workspace button */
-#workspaces button {
-    padding: 0 12px;
-    background-color: transparent;
-    color: #e5e5e5;
     border-radius: 0;
     margin: 0;
+    padding: 0;
+}
+
+/* Workspace button */
+#workspaces button {
+    padding: 0 10px;
+    color: #E5E5E5;
     border: none;
+    border-radius: 0;
+    margin: 0;
     box-shadow: none;
 }
 
-/* Beri border radius hanya pada tombol pertama dan terakhir */
-#workspaces button:first-child {
-    border-top-left-radius: 6px; /* Changed from 4px to 6px */
-    border-bottom-left-radius: 6px;
-    font-weight: bold;
-}
-#workspaces button:last-child {
-    border-top-right-radius: 6px;
-    border-bottom-right-radius: 6px;
-}
-
-/* Gaya untuk workspace yang aktif */
 #workspaces button.active {
-    background-color: #ffffff;
+    background-color: rgb(255, 255, 255);
     color: #000000;
     font-weight: bold;
 }
 
-/* Gaya saat hover */
-#workspaces button:hover {
-    background-color: rgba(0, 0, 0, 0.4);
-}
 
-#workspaces button:not(.active) {
-    opacity: 0.6;
-}
 
 #workspaces button.urgent {
     background-color: #ed8796;
@@ -77,15 +63,11 @@ button:hover {
 }
 
 @keyframes fadeInActive {
-    from {
-        opacity: 0.3;
-    }
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0.5; }
+    to { opacity: 1; }
 }
 
-/* Modul-modul utama dengan rounded konsisten 6px */
+/* Modul utama */
 #clock,
 #battery,
 #cpu,
@@ -99,41 +81,36 @@ button:hover {
 #mode,
 #idle_inhibitor,
 #scratchpad,
-#custom-launcher {
-    padding: 0 12px;
-    color: #E5E5E5;
+#custom-launcher,
+#custom-window-title,
+#custom-power,
+#power-profiles-daemon {
     background-color: #0A0A0A;
-    border-radius: 6px; /* Changed from 4px to 6px */
-    margin: 4px 2px;
+    color: #E5E5E5;
+    border: none;
+    border-radius: 0;
+    margin: 0;
+    padding: 0 12px;
+    box-shadow: none;
 }
 
-#clock {
-    background-color: #ffffff;
-    font-weight: bold;
-    color: #000000;
-    padding: 0 14px;
-    margin: 4px 6px; /* Added more side margin */
+/* Hilangin semua background putih — ganti jadi transparan, teks putih */
+#clock,
+#battery,
+#network,
+#pulseaudio,
+#tray,
+#custom-power,
+#power-profiles-daemon {
+    background-color: transparent;
+    color: #E5E5E5;
 }
 
-#battery {
-    background-color: #ffffff;
-    color: #000000;
-}
-
-#battery.charging,
-#battery.plugged {
-    color: black;
-    background-color: #ffffff;
-}
-
+/* Baterai kritis */
 #battery.critical:not(.charging) {
     background-color: #ed8796;
     color: #1e1e2e;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: steps(12);
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+    animation: blink 0.5s steps(12) infinite alternate;
 }
 
 @keyframes blink {
@@ -143,116 +120,79 @@ button:hover {
     }
 }
 
-#cpu {
-    background-color: #0A0A0A;
-    color: #E5E5E5;
-}
-
-#memory {
-    background-color: #0A0A0A;
-    color: #E5E5E5;
-}
-
-#temperature {
-    background-color: #0A0A0A;
-    color: #E5E5E5;
-}
-
-#temperature.critical {
-    background-color: #ed8796;
-    color: #1e1e2e;
-}
-
-#network {
-    background-color: #ffffff;
-    color: #000000;
-}
-
+/* Network disconnected */
 #network.disconnected {
-    background-color: rgb(237, 135, 150);
-    color: #E5E5E5;
+    background-color: #ed8796;
+    color: #ffffff;
 }
 
-#pulseaudio {
-    background-color: #ffffff;
-    color: #000000;
-}
-
+/* Pulseaudio muted */
 #pulseaudio.muted {
     background-color: rgb(83, 97, 173);
+    color: #ffffff;
 }
 
+/* Tray style */
 #tray {
-    background-color: #ffffff;
+    background-color: transparent;
+    color: #E5E5E5;
+    padding: 0 8px;
 }
 
-#tray > .passive {
-    -gtk-icon-effect: dim;
-}
-
+#tray > .passive { -gtk-icon-effect: dim; }
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
     background-color: #ed8796;
 }
 
-#custom-launcher {
-    background-color: #0A0A0A;
-    color: #E5E5E5;
-    padding: 0 12px;
-    margin-left: 6px;
-    font-size: 14px;
-}
-
+/* Launcher dan title */
+#custom-launcher,
 #custom-window-title {
-    margin: 3px;
-    padding: 0 12px;
-    border-radius: 6px; /* Changed from 4px to 6px */
     background-color: #0A0A0A;
     color: #E5E5E5;
-    opacity: 1;
-    transition: opacity 0.3s ease-in-out, padding 0.3s ease-in-out, margin 0.3s ease-in-out;
 }
 
-#custom-power {
-    background-color: #ffffff;
-    color: #000000;
-    padding: 0 14px;
-    border-radius: 6px; /* Changed from 4px to 6px */
-    margin: 4px 6px; /* Added more side margin */
-    font-size: 14px;
-    min-height: 0;
-}
-
+/* Power button */
 #custom-power:hover {
     background-color: #ed8796;
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
+/* Power profile hover */
+#power-profiles-daemon:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Menu pop-up */
 menu {
-    border-radius: 15px;
-    background-color: rgba(40, 40, 40, 0.95);
+    border-radius: 0;
+    background-color: rgba(20, 20, 20, 0.95);
     color: #ffffff;
     padding: 10px;
 }
 
 menuitem {
-    border-radius: 5px;
+    border-radius: 0;
     padding: 5px 10px;
-    margin: 2px 0px;
+    margin: 0;
 }
 
 menuitem:hover {
-    background-color: rgba(70, 70, 70, 0.95);
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
-#power-profiles-daemon {
-    background-color: #ffffff;
-    color: #000000;
-    padding: 0 12px;
-    border-radius: 6px;
-    margin: 4px 2px;
+/* Hilangkan jarak antar modul */
+.modules-left > *:not(:first-child),
+.modules-center > *:not(:first-child),
+.modules-right > *:not(:first-child) {
+    margin-left: 0;
 }
 
-#power-profiles-daemon:hover {
-    background-color: rgba(0, 0, 0, 0.4);
+/* Semua modul nyatu */
+.modules-left,
+.modules-center,
+.modules-right {
+    background: transparent;
+    margin: 0;
+    padding: 0;
 }

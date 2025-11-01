@@ -141,7 +141,8 @@
             "shutdown": "systemctl poweroff",
             "reboot": "systemctl reboot",
             "suspend": "systemctl suspend",
-            "logout": "hyprctl dispatch exit"
+            "logout": "hyprctl dispatch exit",
+            "lock" : "~/.config/swaylock/lockscreen.sh"
         }
     }
 }

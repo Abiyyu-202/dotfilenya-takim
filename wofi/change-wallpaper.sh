@@ -12,6 +12,9 @@ SELECTED=$(ls "$WALLPAPER_DIR" | wofi --dmenu --prompt "Pilih wallpaper:")
 # Path penuh ke gambar
 WALLPAPER="$WALLPAPER_DIR/$SELECTED"
 
+# Simpan path wallpaper ke file agar swaylock bisa pakai juga
+echo "$WALLPAPER" >~/.current_wallpaper
+
 # Kill hyprpaper biar reload config baru
 pkill hyprpaper
 
