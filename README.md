@@ -7,6 +7,7 @@
 
 
 ---
+
 <h2>Apa aja yang harus dilakukan sebelum make ni config?</h>
 
 ## 🧩 Dependensi
