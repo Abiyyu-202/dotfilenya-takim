@@ -96,7 +96,7 @@
         "interval": 5,
         "format": "{volume}% {icon}",
         "format-bluetooth": "{volume}% {icon}",
-        "format-muted": " Muted",
+        "format-muted": "󰸈 Muted",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
@@ -117,7 +117,7 @@
     },
 
     "custom/launcher": {
-        "format": " ", // logo aplikasi
+        "format": "󰣇", // logo aplikasi
         "on-click": "wofi --show drun", // buka aplikasi
         "tooltip": false
     },
