@@ -19,7 +19,7 @@
         "network",
         "pulseaudio",
         "battery",
-        "power-profiles-daemon", // <-- icon power profile setelah baterai
+         // <-- icon power profile setelah baterai
         "tray",
         "custom/power"
     ],
@@ -77,28 +77,18 @@
             "critical": 15
         },
         "format": "{capacity}% {icon}",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
         "format-full": " {capacity}%",
         "format-alt": "{time} {icon}",
         "format-icons": ["", "", "", "", ""]
     },
 
-    "power-profiles-daemon": {
-        "format": "{icon}",
-        "tooltip-format": "Power profile: {profile}",
-        "format-icons": {
-            "performance": "🚀",
-            "balanced": "⚖️",
-            "power-saver": "💡"
-        }
-    },
-
     "network": {
         "interval": 1,
         "format-wifi": " {essid} ({signalStrength}%)",
-        "format-ethernet": " {ifname}",
-        "format-disconnected": " Disconnected",
+        "format-ethernet": " {ifname}",
+        "format-disconnected": "X Disconnected",
         "tooltip-format": "{ifname}\nIP: {ipaddr}\nStrength: {signalStrength}%"
     },
 
