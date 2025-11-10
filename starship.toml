@@ -1,0 +1,182 @@
+# ============================
+#  Starship Prompt - Monochrome Theme (Light Time Section)
+# ============================
+
+format = """
+[ ](#333333)\
+$os\
+[](bg:#1a1a1a fg:#333333)\
+$username\
+[](bg:#333333 fg:#1a1a1a)\
+$directory\
+[](bg:#000000 fg:#333333)\
+$git_branch\
+$git_status\
+[](fg:#000000 bg:#1a1a1a)\
+$cmd_duration\
+[](fg:#1a1a1a bg:#333333)\
+$c\
+$cpp\
+$golang\
+$haskell\
+$java\
+$nodejs\
+$python\
+$rust\
+[](bg:#dddddd fg:#333333)\
+$time\
+[ ](fg:#dddddd)\
+"""
+
+add_newline = true
+
+# ============================
+# USERNAME
+# ============================
+[username]
+show_always = true
+style_user = "bg:#1a1a1a fg:#ffffff"
+style_root = "bg:#1a1a1a fg:#ff5555"
+format = '[$user ]($style)'
+disabled = false
+
+# ============================
+# OS ICON
+# ============================
+[os]
+style = "bg:#333333 fg:#ffffff"
+disabled = false
+
+[os.symbols]
+AlmaLinux = ""
+Alpine = ""
+Android = ""
+Arch = "󰣇"
+Artix = ""
+CachyOS = ""
+CentOS = ""
+Debian = ""
+DragonFly = ""
+EndeavourOS = ""
+Fedora = ""
+FreeBSD = ""
+Garuda = ""
+Gentoo = ""
+Kali = ""
+Linux = ""
+Macos = ""
+Manjaro = ""
+Mint = "󰣭"
+NetBSD = "🚩"
+NixOS = "󱄅"
+Nobara = ""
+OpenBSD = ""
+openSUSE = ""
+OracleLinux = "󰫼"
+Pop = ""
+Raspbian = ""
+Redhat = ""
+RedHatEnterprise = ""
+RockyLinux = ""
+Solus = ""
+SUSE = ""
+Ubuntu = ""
+Unknown = ""
+Void = ""
+Windows = ""
+
+# ============================
+# DIRECTORY
+# ============================
+[directory]
+style = "bg:#333333 fg:#ffffff"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+# ============================
+# GIT
+# ============================
+[git_branch]
+symbol = ""
+style = "bg:#000000 fg:#cccccc"
+format = '[ $symbol $branch ]($style)'
+
+[git_status]
+style = "bg:#000000 fg:#cccccc"
+format = '[$all_status$ahead_behind ]($style)'
+
+# ============================
+# COMMAND DURATION
+# ============================
+[cmd_duration]
+disabled = false
+min_time = 2000
+style = 'bg:#1a1a1a fg:#ffffff'
+format = '[ Took $duration!]($style)'
+
+# ============================
+# TIME (Light Gray Background)
+# ============================
+[time]
+disabled = false
+time_format = "%b %d, %I:%M %P"
+style = "bg:#dddddd fg:#000000"
+format = "[ $time ]($style)"
+
+# ============================
+# LANGUAGE MODULES
+# ============================
+[c]
+symbol = "C "
+style = "bg:#333333 fg:#ffffff"
+format = '[ $symbol($version(-$name) )]($style)'
+disabled = false
+
+[cpp]
+symbol = " "
+style = "bg:#333333 fg:#ffffff"
+format = '[ $symbol($version(-$name) )]($style)'
+disabled = false
+
+[golang]
+symbol = " "
+style = "bg:#333333 fg:#ffffff"
+format = '[ $symbol($version )]($style)'
+disabled = false
+
+[haskell]
+symbol = "󰲒 "
+style = "bg:#333333 fg:#ffffff"
+format = '[ $symbol($version )]($style)'
+disabled = false
+
+[java]
+symbol = " "
+style = "bg:#333333 fg:#ffffff"
+format = '[ ${symbol}(${version} )]($style)'
+disabled = false
+
+[nodejs]
+symbol = " "
+style = "bg:#333333 fg:#ffffff"
+format = '[ $symbol($version )]($style)'
+disabled = false
+
+[rust]
+symbol = " "
+style = "bg:#333333 fg:#ffffff"
+format = '[ $symbol($version )]($style)'
+disabled = false
+
+[python]
+symbol = " "
+style = "bg:#333333 fg:#ffffff"
+format = '[ ${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+disabled = false
