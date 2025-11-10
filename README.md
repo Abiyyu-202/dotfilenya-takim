@@ -19,13 +19,12 @@ Setup ini umumnya pakai paket berikut (atau setara di distro kamu):
 ```bash
 # Fedora (beberapa paket mungkin beda nama atau perlu COPR)
 sudo dnf install wlroots waybar wofi zsh pavucontrol brightnessctl foot nautilus
-  (loh kenapa dikit di fedora?, jawaban nya karena di fedora ribet, harus pake ini itu, itu yang di contoh yang avalible di dnf aja)
 
 # Arch Linux
 sudo pacman -S wlroots waybar wofi swaync pavucontrol hyprpaper grim brightnessctl ttf-jetbrains-mono-nerd ttf-cascadia-code-nerd woff2-font-awesome nautilus foot && 
 yay -S bibata-cursor-theme wlroots-git zen-browser-bin swaylock-effects 
 ```
-
+> (loh kenapa dikit di fedora?, jawaban nya karena di fedora ribet, harus pake ini itu, itu yang di contoh yang avalible di dnf aja)
 > 💡 Jika ada paket yang tidak ditemukan, cek lagi perlu repo apa atau kemungkinan buruknya **BUILD MANUAL** (god i love fedora)
 
 Intinya, di dalam situ harus ada waybar, wofi, notifier (di config ini aku pakai swaync), pavucontrol, brightnessctl, cursor (opsional tapi menambah estetika), terminal (disini aku pakai foot), file manager, sama perlu ttf-jetbrains-mono-nerd, dan juga nambah swaylock-effect
