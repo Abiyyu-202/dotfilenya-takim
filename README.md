@@ -22,7 +22,8 @@ sudo dnf install wlroots waybar wofi zsh pavucontrol brightnessctl foot nautilus
   (loh kenapa dikit di fedora?, jawaban nya karena di fedora ribet, harus pake ini itu, itu yang di contoh yang avalible di dnf aja)
 
 # Arch Linux
-sudo pacman -S wlroots waybar wofi swaync pavucontrol hyprpaper grim brightnessctl ttf-jetbrains-mono-nerd ttf-cascadia-code-nerd woff2-font-awesome nautilus foot && yay -S bibata-cursor-theme wlroots-git zen-browser-bin swaylock-effects 
+sudo pacman -S wlroots waybar wofi swaync pavucontrol hyprpaper grim brightnessctl ttf-jetbrains-mono-nerd ttf-cascadia-code-nerd woff2-font-awesome nautilus foot && 
+yay -S bibata-cursor-theme wlroots-git zen-browser-bin swaylock-effects 
 ```
 
 > 💡 Jika ada paket yang tidak ditemukan, cek lagi perlu repo apa atau kemungkinan buruknya **BUILD MANUAL** (god i love fedora)
