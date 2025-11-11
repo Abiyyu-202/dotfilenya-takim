@@ -2,9 +2,9 @@
     "reload_style_on_change": true,
     "height": 30,
     "spacing": 4,
-    "expand-left": true,    // Biarkan modul kiri memenuhi ruang
-    "expand-right": true,   // Biarkan modul kanan memenuhi ruang
-    "fixed-center": true,   // Pusat tidak lagi kaku, bisa terdorong
+    "expand-left": true,    
+    "expand-right": true,   
+    "fixed-center": true,  
 
     "modules-left": [
         "hyprland/workspaces",
@@ -117,16 +117,16 @@
     },
 
     "custom/launcher": {
-        "format": "󰣇", // logo aplikasi
-        "on-click": "wofi --show drun", // buka aplikasi
+        "format": "󰣇", 
+        "on-click": "wofi --show drun",
         "tooltip": false
     },
 
     "custom/power": {
-        "format": "⏻ ", // Ikon power
+        "format": "⏻ ",
         "tooltip": false,
-        "menu": "on-click", // munculin menunya
-        "menu-file": "~/.config/waybar/power-menu.xml", // Path ke file menu
+        "menu": "on-click", 
+        "menu-file": "~/.config/waybar/power-menu.xml", 
         "menu-actions": {
             "shutdown": "systemctl poweroff",
             "reboot": "systemctl reboot",

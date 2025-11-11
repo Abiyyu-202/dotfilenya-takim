@@ -28,12 +28,12 @@ button:hover {
 
 #workspaces {
     background-color: #0A0A0A;
-    border-radius: 6px; /* Changed from 4px to 6px */
+    border-radius: 6px; 
     margin: 4px 6px;
     padding: 0px;
 }
 
-/* Gaya untuk individual workspace button */
+
 #workspaces button {
     padding: 0 10px;
     background-color: transparent;
@@ -44,9 +44,8 @@ button:hover {
     box-shadow: none;
 }
 
-/* Beri border radius hanya pada tombol pertama dan terakhir */
 #workspaces button:first-child {
-    border-top-left-radius: 6px; /* Changed from 4px to 6px */
+    border-top-left-radius: 6px; 
     border-bottom-left-radius: 6px;
     font-weight: bold;
 }
@@ -55,16 +54,10 @@ button:hover {
     border-bottom-right-radius: 6px;
 }
 
-/* Gaya untuk workspace yang aktif */
 #workspaces button.active {
     background-color: #ffffff;
     color: #000000;
     font-weight: bold;
-}
-
-/* Gaya saat hover */
-#workspaces button:hover {
-    background-color: rgba(0, 0, 0, 0.4);
 }
 
 #workspaces button:not(.active) {
@@ -85,25 +78,11 @@ button:hover {
     }
 }
 
-/* Modul-modul utama dengan rounded konsisten 6px */
-#clock,
-#battery,
-#cpu,
-#memory,
-#disk,
-#temperature,
-#backlight,
-#network,
-#pulseaudio,
-#tray,
-#mode,
-#idle_inhibitor,
-#scratchpad,
 #custom-launcher {
     padding: 0 12px;
     color: #E5E5E5;
     background-color: #0A0A0A;
-    border-radius: 6px; /* Changed from 4px to 6px */
+    border-radius: 6px;
     margin: 4px 2px;
 }
 
@@ -112,7 +91,7 @@ button:hover {
     font-weight: bold;
     color: #000000;
     padding: 0 14px;
-    margin: 4px 6px; /* Added more side margin */
+    margin: 4px 6px; 
 }
 
 #battery {
@@ -206,7 +185,7 @@ button:hover {
 #custom-window-title {
     margin: 3px;
     padding: 0 12px;
-    border-radius: 6px; /* Changed from 4px to 6px */
+    border-radius: 6px;
     background-color: #0A0A0A;
     color: #E5E5E5;
     opacity: 1;
@@ -217,8 +196,8 @@ button:hover {
     background-color: #ffffff;
     color: #000000;
     padding: 0 14px;
-    border-radius: 6px; /* Changed from 4px to 6px */
-    margin: 4px 6px; /* Added more side margin */
+    border-radius: 6px; 
+    margin: 4px 6px; 
     font-size: 14px;
     min-height: 0;
 }
