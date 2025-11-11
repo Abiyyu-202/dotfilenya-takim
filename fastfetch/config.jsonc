@@ -72,13 +72,13 @@
     },
     {
       "type": "os",
-      "key": "  ├ ",
+      "key": "  ├ 󰣇",
       "keyColor": "37",
       "outputColor": "37"
     },
     {
       "type": "kernel",
-      "key": "  ├ ",
+      "key": "  ├ ⮚",
       "keyColor": "37",
       "outputColor": "37"
     },
