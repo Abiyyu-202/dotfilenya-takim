@@ -49,12 +49,6 @@
       "keyColor": "37"
     },
     {
-      "type": "display",
-      "key": "  ├ ",
-      "keyColor": "37",
-      "outputColor": "37"
-    },
-    {
       "type": "battery",
       "key": "  ├ ",
       "keyColor": "37",
