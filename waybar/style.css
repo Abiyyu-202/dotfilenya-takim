@@ -61,6 +61,11 @@ button:hover {
     font-weight: bold;
 }
 
+/* Gaya saat hover */
+#workspaces button:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
 #workspaces button:not(.active) {
     opacity: 0.6;
 }
