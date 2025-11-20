@@ -33,7 +33,6 @@ button:hover {
     padding: 0px;
 }
 
-/* Gaya untuk individual workspace button */
 #workspaces button {
     padding: 0 10px;
     background-color: transparent;
@@ -54,16 +53,10 @@ button:hover {
     border-bottom-right-radius: 6px;
 }
 
-/* Gaya untuk workspace yang aktif */
 #workspaces button.active {
     background-color: #ffffff;
     color: #000000;
     font-weight: bold;
-}
-
-/* Gaya saat hover */
-#workspaces button:hover {
-    background-color: rgba(0, 0, 0, 0.4);
 }
 
 #workspaces button:not(.active) {
