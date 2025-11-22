@@ -86,9 +86,9 @@
 
     "network": {
         "interval": 1,
-        "format-wifi": " {essid} ({signalStrength}%)",
-        "format-ethernet": " {ifname}",
-        "format-disconnected": "X Disconnected",
+        "format-wifi": "󰤨 {essid} ({signalStrength}%)",
+        "format-ethernet": "󰌗 {ifname}",
+        "format-disconnected": " Disconnected",
         "tooltip-format": "{ifname}\nIP: {ipaddr}\nStrength: {signalStrength}%"
     },
 
@@ -96,11 +96,11 @@
         "interval": 5,
         "format": "{volume}% {icon}",
         "format-bluetooth": "{volume}% {icon}",
-        "format-muted": "󰸈 Muted",
+        "format-muted": "󰝟 Muted",
         "format-icons": {
             "headphone": "",
-            "hands-free": "",
-            "headset": "",
+            "hands-free": "󰋎",
+            "headset": "󰋎",
             "phone": "",
             "portable": "",
             "car": "",
