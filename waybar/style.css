@@ -196,9 +196,7 @@ button:hover {
   color: #000000;
   padding: 0 14px;
   border-radius: 6px;
-  /* Changed from 4px to 6px */
   margin: 4px 6px;
-  /* Added more side margin */
   font-size: 14px;
   min-height: 0;
 }
