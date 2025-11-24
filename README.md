@@ -4,7 +4,7 @@
 
 **Dotfiles pribadi untuk setup my linux aku**
 
- *Bersifat experimental, jangan coba coba kalo ga mau mata rusak liat config ku* 
+  *(jangan harap workflow kalian lancar di config ku)*
 
 [![Arch Linux](https://img.shields.io/badge/Arch_Linux-%231793D1?logo=arch-linux&logoColor=white)](https://archlinux.org/)
 [![Hyprland](https://img.shields.io/badge/Hyprland-%23000000?logo=linux&logoColor=white)](https://hyprland.org/)
