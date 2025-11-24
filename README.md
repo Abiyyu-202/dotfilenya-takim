@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🌳 Sebuah Dotfile Iseng
+# Sebuah Dotfile Iseng
 
 **Dotfiles pribadi untuk setup my linux aku**
 
