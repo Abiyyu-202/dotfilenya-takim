@@ -64,19 +64,19 @@ sudo dnf install wlroots waybar wofi zsh pavucontrol brightnessctl foot nautilus
 
 > 💡 **Catatan**: Beberapa paket di Fedora mungkin perlu dari COPR atau BUILD MANUAL. Cek dokumentasi resmi untuk detailnya.
 
-> Intinya, di dalam situ harus ada:
-> - WM: Hyprland
-> - Status Bar: Waybar
-> - Launcher: Wofi
-> - Notifier: Swaync
-> - Lock Screen: Swaylock
-> - System Info: Fastfetch
-> - Shell Prompt: Starship
-> - Audio: Pavucontrol
-> - Brightness: Brightnessctl
-> - Terminal: Kitty
-> - File Manager: Nautilus
-> - Cursor: Bibata (opsional, direkomendasikan)
+Intinya, di dalam situ harus ada:
+- WM: Hyprland
+- Status Bar: Waybar
+- Launcher: Wofi
+- Notifier: Swaync
+- Lock Screen: Swaylock
+- System Info: Fastfetch
+- Shell Prompt: Starship
+- Audio: Pavucontrol
+- Brightness: Brightnessctl
+- Terminal: Kitty
+- File Manager: Nautilus
+- Cursor: Bibata (opsional, direkomendasikan)
 
 ---
 
