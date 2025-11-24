@@ -55,6 +55,18 @@
       "outputColor": "37"
     },
     {
+      "type": "localip",
+      "key": "  ├ 󰌘",
+      "keyColor": "37",
+      "outputColor": "37"
+    },
+    {
+      "type": "publicip",
+      "key": "  ├ 󰌚",
+      "keyColor": "37",
+      "outputColor": "37"
+    },
+    {
       "type": "custom",
       "format": "  ╰──────────────────────────────────────────────────────────╯",
       "outputColor": "37"
