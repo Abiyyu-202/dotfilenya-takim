@@ -62,7 +62,7 @@ yay -S bibata-cursor-theme wlroots-git zen-browser-bin swaylock-effects
 sudo dnf install wlroots waybar wofi zsh pavucontrol brightnessctl foot nautilus
 ```
 
-> 💡 **Catatan**: Beberapa paket di Fedora mungkin perlu dari COPR atau BUILD MANUAL. Cek dokumentasi resmi untuk detailnya.
+> 💡 **Catatan**: Itu hanya app yang bisa diinstall dari repo resmi, beberapa paket di Fedora mungkin perlu dari COPR atau BUILD MANUAL. Cek dokumentasi resmi untuk detailnya.
 
 Intinya, di dalam situ harus ada:
 - WM: Hyprland
@@ -77,55 +77,6 @@ Intinya, di dalam situ harus ada:
 - Terminal: Kitty
 - File Manager: Nautilus
 - Cursor: Bibata (opsional, direkomendasikan)
-
----
-
-## 📂 Folder Structure
-
-```
-dotfilenya-takim/
-│
-├── 🎨 fastfetch/          # System info display config
-│   ├── config.conf
-│   └── ...
-│
-├── 🪟 hypr/               # Hyprland WM configuration
-│   ├── hyprland.conf      
-│   ├── hyprpaper.conf   
-│   └── ...
-│
-├── 🔐 swaylock/           # Lock screen configuration
-│   ├── config
-│   └── ...
-│
-├── 📊 waybar/             # Status bar configuration
-│   ├── config.jsonc       
-│   ├── style.css          
-│   └── ...
-│
-├── 🚀 wofi/               # Application launcher config
-│   ├── config
-│   ├── style.css
-│   └── ...
-│
-├── ⭐ starship.toml       # Shell prompt configuration
-└── 📖 README.md           # File ini
-```
-
-## ⚙️ Customization Tips
-
-### Keybindings
-Edit keybindings di `hypr/hyprland.conf` - semua kombinasi keyboard bisa disesuaikan sesuai preferensi (jangan tanya kenapa aku ga mau misahin)
-
-### Color Scheme
-Ubah warna di file CSS:
-- `waybar/style.css` - Status bar colors
-- `wofi/style.css` - Launcher colors
-- `hypr/hyprland.conf` - Hyprland window decorations
-
----
-### Fonts
-Semua config sudah menggunakan **Jetbrains Mono Nerd Font**. Untuk mengganti, update di masing-masing config file.
 
 ---
 
@@ -149,9 +100,6 @@ Semua config sudah menggunakan **Jetbrains Mono Nerd Font**. Untuk mengganti, up
 
 ---
 
-
-
-## 🎨 Preview
 
 > ⚠️ **Experimental Zone!**  
 > Warna, layout, bahkan seluruh setup bisa berubah sewaktu-waktu.  
