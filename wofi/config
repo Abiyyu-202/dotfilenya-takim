@@ -1,8 +1,13 @@
 show=drun
 allow_images=false
-width=40%
-height=40%
-prompt=Search something....
+width=30%
+height=30%
+prompt=Search...
 location=center
-insensitive=false
+insensitive=true
 hide_scroll=true
+key_up = k
+key_down = j
+key_left = h
+key_right = l
+key_exit = q

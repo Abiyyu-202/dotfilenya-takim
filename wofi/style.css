@@ -1,60 +1,79 @@
 window {
-    margin: 5px;
-    border: 1px solid #64727d99;
-    background-color: rgba(10, 10, 10, 0.815);
-    border-radius: 8px;
-    font-family: 'JetBrainsMono Nerd Font', 'Font Awesome 6 Free', monospace;
+  margin: 5px;
+  border: 1px solid #64727d99;
+  background-color: rgba(10, 10, 10, 0.82);
+  border-radius: 0px;
+  font-family: 'Noto Sans', sans-serif;
 }
 
 #input {
-    margin: 0;
-    margin-bottom: 10px;
-    padding: 7px;
-    border: none;
-    border-radius: 8px;
-    background-color: rgba(60, 60, 60, 0.8);
-    color: #E5E5E5;
-    font-size: 14px;
-    width: 100%;
-    box-sizing: border-box;
+  margin: 0;
+  margin-bottom: 10px;
+  padding: 7px;
+  /* balik ke ukuran semula */
+  border: none;
+  border-radius: 0px;
+  background-color: rgba(100, 100, 100, 0.45);
+  color: #E5E5E5;
+  font-size: 14px;
+  /* balik ke ukuran semula */
+  width: 100%;
+  box-sizing: border-box;
 }
 
 #outer-box {
-    margin: 8px;
-    background-color: transparent;
+  margin: 8px;
+  background-color: transparent;
 }
 
-#inner-box, #scroll {
-    margin: 0;
-    padding: 0;
-    background-color: transparent;
-    border: none;
+#inner-box,
+#scroll {
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  border: none;
 }
 
 #entry {
-    margin: 0;
-    padding: 8px;
-    border-radius: 4px;
-    background-color: transparent;
-    color: #E5E5E5;
-    width: 100%;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 8px;
+  /* balik */
+  border-radius: 0px;
+  /* no round */
+  background-color: transparent;
+  color: #E5E5E5;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 #entry:selected {
-    background-color: #ffffff;
-    border: none;
+  background-color: #ffffff;
+  border: none;
 }
 
 #text {
-    color: #E5E5E5;
-    font-size: 13px;
+  color: #E5E5E5;
+  font-size: 13px;
+  /* balik semula */
 }
 
 #text:selected {
-    color: #000000;
+  color: #000000;
 }
 
 #img {
-    margin-right: 10px;
+  margin-right: 10px;
+  /* balik semula */
+}
+
+
+#expander {
+  opacity: 0;
+  margin: 0;
+  padding: 0;
+  width: 0;
+}
+
+#expander image {
+  opacity: 0;
 }
