@@ -4,8 +4,8 @@ STATE_FILE=/tmp/hypr-gapstate
 
 if [ -f "$STATE_FILE" ]; then
   hyprctl keyword general:gaps_in 5
-  hyprctl keyword general:gaps_out 10
-  hyprctl keyword decoration:rounding 6
+  hyprctl keyword general:gaps_out 9
+  hyprctl keyword decoration:rounding 0
   rm "$STATE_FILE"
   notify-send "Gapless disable"
 else
