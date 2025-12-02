@@ -1,31 +1,46 @@
 #!/bin/bash
 
-# Folder tempat wallpaper disimpan
-WALLPAPER_DIR="/home/toheartz/.config/hypr/wallpaper/"
+# Folder wallpaper
+WALLPAPER_DIR="$HOME/.config/hypr/wallpaper/"
 
-# Pilih gambar dengan wofi
+# Pilih gambar via wofi
 SELECTED=$(ls "$WALLPAPER_DIR" | wofi --dmenu --prompt "Pilih wallpaper:")
-
-# Kalau batal, keluar
 [ -z "$SELECTED" ] && exit
 
-# Path penuh ke gambar
 WALLPAPER="$WALLPAPER_DIR/$SELECTED"
 
-# Simpan path wallpaper ke file agar swaylock bisa pakai juga
+# Simpan path buat swaylock
 echo "$WALLPAPER" >~/.current_wallpaper
 
-# Kill hyprpaper biar reload config baru
-pkill hyprpaper
+# Start swww-daemon kalau belum jalan
+if ! pgrep -x "swww-daemon" >/dev/null; then
+  swww-daemon &
+  sleep 0.5
+fi
 
-# Buat config baru
-CONFIG="$HOME/.config/hypr/hyprpaper.conf"
-echo "preload = $WALLPAPER" >"$CONFIG"
+# Deteksi session (Hyprland atau Niri)
+SESSION=$(echo "$XDG_CURRENT_DESKTOP" | tr '[:upper:]' '[:lower:]')
 
-# Ambil semua monitor aktif dan apply wallpaper ke semuanya
-hyprctl monitors | grep "Monitor" | awk '{print $2}' | while read -r MONITOR; do
-  echo "wallpaper = $MONITOR,$WALLPAPER" >>"$CONFIG"
-done
+if [[ "$SESSION" == *"hyprland"* ]]; then
+  # HYPRLAND MODE
+  MONITORS=$(hyprctl monitors -j | jq -r '.[].name')
 
-# Jalankan ulang hyprpaper
-hyprpaper &
+  for MON in $MONITORS; do
+    swww img "$WALLPAPER" \
+      --outputs "$MON" \
+      --transition-type grow \
+      --transition-step 120 \
+      --transition-fps 120 \
+      --transition-duration 1 \
+      --transition-bezier 0.4,0.2,0.2,1.0
+  done
+
+else
+  # NIRI MODE (tidak ada output per monitor)
+  swww img "$WALLPAPER" \
+    --transition-type grow \
+    --transition-step 120 \
+    --transition-fps 120 \
+    --transition-duration 1 \
+    --transition-bezier 0.4,0.2,0.2,1.0
+fi
