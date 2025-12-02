@@ -41,6 +41,7 @@ ln -s $(pwd)/hypr ~/.config/hypr
 ln -s $(pwd)/swaylock ~/.config/swaylock
 ln -s $(pwd)/waybar ~/.config/waybar
 ln -s $(pwd)/wofi ~/.config/wofi
+ln -s $(pwd)/niri ~/.config/niri
 
 # Copy starship config
 cp $(pwd)/starship.toml ~/.config/starship.toml
@@ -50,7 +51,7 @@ cp $(pwd)/starship.toml ~/.config/starship.toml
 
 **Arch Linux:**
 ```bash
-sudo pacman -S wlroots waybar wofi swaync pavucontrol hyprpaper grim \
+sudo pacman -S wlroots waybar wofi swaync pavucontrol swww grim \
   brightnessctl ttf-jetbrains-mono-nerd ttf-cascadia-code-nerd \
   woff2-font-awesome nautilus foot
 
@@ -65,7 +66,7 @@ sudo dnf install wlroots waybar wofi zsh pavucontrol brightnessctl foot nautilus
 > 💡 **Catatan**: Itu hanya app yang bisa diinstall dari repo resmi, beberapa paket di Fedora mungkin perlu dari COPR atau BUILD MANUAL. Cek dokumentasi resmi untuk detailnya.
 
 Intinya, di dalam situ harus ada:
-- WM: Hyprland
+- WM: Hyprland, sama niri
 - Status Bar: Waybar
 - Launcher: Wofi
 - Notifier: Swaync
@@ -108,8 +109,8 @@ Intinya, di dalam situ harus ada:
 ---
 ## 🎯 Rencana Ke Depan
 
-**MUNGKIN** nanti bakal nambah konfigurasi buat WM lain, tapi untuk sekarang...  
-> "Aku males nambah config, kreativitas ku nya setipis tisu"
+Bakal ku customize makin ciamik lagi sih, terutama waybar nya masih kurang buat ku  
+
 
 ---
 
