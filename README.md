@@ -8,6 +8,7 @@
 
 [![Arch Linux](https://img.shields.io/badge/Arch_Linux-%231793D1?logo=arch-linux&logoColor=white)](https://archlinux.org/)
 [![Hyprland](https://img.shields.io/badge/Hyprland-%23000000?logo=linux&logoColor=white)](https://hyprland.org/)
+[![Niri](https://img.shields.io/badge/Niri-8B5CF6?logo=linux&logoColor=white)](https://yalter.github.io/niri/)
 [![Wayland](https://img.shields.io/badge/Wayland-FFBC00?logo=wayland&logoColor=black)](https://wayland.freedesktop.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![CSS](https://img.shields.io/badge/CSS-1572B6?logo=css3&logoColor=white)](https://www.w3schools.com/css/)
