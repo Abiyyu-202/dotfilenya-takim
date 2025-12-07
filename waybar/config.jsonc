@@ -8,6 +8,7 @@
 
     "modules-left": [
         "hyprland/workspaces",
+        "niri/workspaces",
         "hyprland/submap"
     ],
 
@@ -128,8 +129,8 @@
         "menu": "on-click", 
         "menu-file": "~/.config/waybar/power-menu.xml", 
         "menu-actions": {
-            "shutdown": "systemctl poweroff",
-            "reboot": "systemctl reboot",
+            "shutdown": "shutdown now",
+            "reboot": "shutdown -r now",
             "suspend": "systemctl suspend",
             "logout": "hyprctl dispatch exit",
             "lock" : "~/.config/swaylock/lockscreen.sh"
