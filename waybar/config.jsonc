@@ -13,10 +13,11 @@
     ],
 
     "modules-center": [
-        "clock"
+        "custom/window-title"
     ],
 
     "modules-right": [
+        "clock",
         "network",
         "pulseaudio",
         "battery",
@@ -135,5 +136,12 @@
             "logout": "hyprctl dispatch exit",
             "lock" : "~/.config/swaylock/lockscreen.sh"
         }
+    },
+
+    "custom/window-title": {
+        "exec": "~/.config/waybar/window-title.sh",
+        "return-type": "json",
+        "interval": 1,
+        "max-length": 50
     }
 }
