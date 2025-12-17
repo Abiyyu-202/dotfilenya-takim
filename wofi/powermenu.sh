@@ -20,7 +20,7 @@ Logout)
 
   # Hyprland logout
   if command -v hyprctl >/dev/null 2>&1; then
-    hyprctl dispatch exit
+    hyprctl dispatch exit 0
     exit
   fi
 
@@ -34,6 +34,6 @@ Suspend)
 
 Lock)
   # Eksekusi script lockscreen milikmu
-  ~/.config/hyprland/lockscreen
+  hyprlock
   ;;
 esac
