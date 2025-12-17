@@ -1,28 +1,24 @@
 #!/bin/bash
 
-# Folder wallpaper
 WALLPAPER_DIR="$HOME/.config/hypr/wallpaper/"
 
-# Pilih gambar via wofi
 SELECTED=$(ls "$WALLPAPER_DIR" | wofi --dmenu --prompt "Pilih wallpaper:")
 [ -z "$SELECTED" ] && exit
 
 WALLPAPER="$WALLPAPER_DIR/$SELECTED"
 
-# Simpan path buat swaylock
-echo "$WALLPAPER" >~/.current_wallpaper
+cp "$WALLPAPER" "$HOME/.cache/wallpaper_rn.png"
+echo "$WALLPAPER" >"$HOME/.current_wallpaper"
 
-# Start swww-daemon kalau belum jalan
 if ! pgrep -x "swww-daemon" >/dev/null; then
   swww-daemon &
   sleep 0.5
 fi
 
-# Deteksi session (Hyprland atau Niri)
 SESSION=$(echo "$XDG_CURRENT_DESKTOP" | tr '[:upper:]' '[:lower:]')
 
 if [[ "$SESSION" == *"hyprland"* ]]; then
-  # HYPRLAND MODE
+  # HYPRLAND
   MONITORS=$(hyprctl monitors -j | jq -r '.[].name')
 
   for MON in $MONITORS; do
@@ -36,7 +32,7 @@ if [[ "$SESSION" == *"hyprland"* ]]; then
   done
 
 else
-  # NIRI MODE (tidak ada output per monitor)
+  # NIRI
   swww img "$WALLPAPER" \
     --transition-type grow \
     --transition-step 120 \
