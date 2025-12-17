@@ -1,30 +1,42 @@
 #!/bin/bash
-# Optimized script for custom window title
+# Unified window title script (Hyprland + Niri + NVIM)
 
-# Get the active window JSON directly, more efficiently
-active_window=$(hyprctl -j activewindow 2>/dev/null)
-
-# Check if the result is valid and non-empty much faster
-if [[ -z "$active_window" || "$active_window" == "null" || "$active_window" == "{}" ]]; then
-    echo ""
-    exit 0
-fi
-
-# Use jq to extract class and title in a single call
-class=$(echo "$active_window" | jq -r '.class')
-title=$(echo "$active_window" | jq -r '.title // ""' | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//' -e 's/"/"/g' | cut -c1-50)
-
-# Simple icon mapping
-case "${class^^}" in
-    "FIREFOX") icon="" ;;
-    "CODE"|"CODE - INSIDERS") icon="󰨞" ;;
-    "KITTY"|"ALACRITTY") icon="" ;;
-    *) icon="" ;;
-esac
-
-# Only output if there's a title to show
-if [[ -n "$title" ]]; then
-    echo "{\"text\": \"$icon $title\", \"tooltip\": \"$class: $title\"}"
+# Detect compositor
+if command -v hyprctl >/dev/null 2>&1; then
+  json=$(hyprctl -j activewindow 2>/dev/null)
+  class=$(echo "$json" | jq -r '.class // ""')
+  title=$(echo "$json" | jq -r '.title // ""')
+elif command -v niri-msg >/dev/null 2>&1; then
+  json=$(niri-msg -j focused-window 2>/dev/null)
+  class=$(echo "$json" | jq -r '.app_id // ""')
+  title=$(echo "$json" | jq -r '.title // ""')
 else
-    echo ""
+  echo ""
+  exit 0
 fi
+
+# Validation
+if [[ -z "$title" || "$json" == "null" || "$json" == "{}" ]]; then
+  echo ""
+  exit 0
+fi
+
+# Normalize title
+title=$(echo "$title" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//' | cut -c1-50)
+title_upper=$(echo "$title" | tr '[:lower:]' '[:upper:]')
+
+# Icon detection (NVIM first)
+if [[ "$title_upper" == *"NVIM"* || "$title_upper" == *"NEOVIM"* ]]; then
+  icon=" "
+else
+  case "${class^^}" in
+  "CODE" | "CODE-INSIDERS") icon="󰨞 " ;;
+  "KITTY" | "ALACRITTY" | "FOOT") icon=" " ;;
+  "FIREFOX") icon=" " ;;
+  "DISCORD") icon="󰙯 " ;;
+  *) icon=" " ;;
+  esac
+fi
+
+# Output
+echo "{\"text\": \"$icon$title\", \"tooltip\": \"$class: $title\"}"
