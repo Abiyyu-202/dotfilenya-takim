@@ -7,17 +7,16 @@
     "fixed-center": true,  
 
     "modules-left": [
+        "clock",
         "hyprland/workspaces",
         "niri/workspaces",
-        "hyprland/submap"
     ],
 
     "modules-center": [
-        "custom/window-title"
+        "custom/window-title",
     ],
 
     "modules-right": [
-        "clock",
         "network",
         "pulseaudio",
         "battery",
@@ -143,5 +142,8 @@
         "return-type": "json",
         "interval": 1,
         "max-length": 50
-    }
+    },
+    
+    
+
 }
