@@ -70,6 +70,7 @@ spawn-at-startup "waybar"
 spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 spawn-at-startup "discord"
 spawn-at-startup "swww-daemon"
+spawn-at-startup "steam"
 spawn-at-startup "swayidle" "-w" \
     "timeout" "120" "niri msg action power-off-monitors" \
     "timeout" "130" "hyprlock" \
@@ -140,6 +141,7 @@ binds {
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "hyprlock"; }
     Super+Ctrl+W { spawn "~/.config/wofi/change-wallpaper.sh"; }
     Super+ctrl+e { spawn "wofi-emoji"; }
+    Mod+Shift+W hotkey-overlay-title="Reload Waybar" { spawn "sh" "-c" "pkill waybar; waybar &"; }
 
     // Audio
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+"; }
