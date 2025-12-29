@@ -16,7 +16,7 @@ input {
     }
 
     mouse {
-        accel-speed 0.01
+        accel-speed 0.1
         accel-profile "flat"
     }
 
@@ -24,6 +24,14 @@ input {
 }
 
 prefer-no-csd
+
+output "eDP-1" {
+    focus-at-startup
+    hot-corners {
+        off
+    }
+}
+
 layout {
     gaps 16
     center-focused-column "never"
@@ -260,10 +268,9 @@ binds {
     Mod+Shift+Equal { set-window-height "+10%"; }
 
     // Window layout
-    Mod+V { toggle-window-floating; }
     Mod+Shift+V { switch-focus-between-floating-and-tiling; }
-    Mod+W { toggle-column-tabbed-display; }
-
+    Mod+W { toggle-window-floating; }
+    Mod+Ctrl+Shift+W { toggle-column-tabbed-display; }
     // Actions to switch layouts.
     // Note: if you uncomment these, make sure you do NOT have
     // a matching layout switch hotkey configured in xkb options above.
