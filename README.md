@@ -2,41 +2,40 @@
 
 # Sebuah Dotfile Iseng
 
-**Dotfiles pribadi untuk setup my linux aku**
-
-  *(jangan harap workflow kalian lancar di config ku)*
+Dotfiles pribadi untuk setup Linux harian.  
+Opinionated, berbasis Wayland, dan tidak ditujukan sebagai konfigurasi universal.
 
 [![Arch Linux](https://img.shields.io/badge/Arch_Linux-%231793D1?logo=arch-linux&logoColor=white)](https://archlinux.org/)
 [![Hyprland](https://img.shields.io/badge/Hyprland-%23000000?logo=linux&logoColor=white)](https://hyprland.org/)
 [![Niri](https://img.shields.io/badge/Niri-8B5CF6?logo=linux&logoColor=white)](https://yalter.github.io/niri/)
 [![Wayland](https://img.shields.io/badge/Wayland-FFBC00?logo=wayland&logoColor=black)](https://wayland.freedesktop.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![CSS](https://img.shields.io/badge/CSS-1572B6?logo=css3&logoColor=white)](https://www.w3schools.com/css/)
 
 </div>
 
 ---
 
-## 💬 Q&A
+## Tentang Repo Ini
 
-> 🗣️:"Ini config apa mas?"  
-> "Config nguawor berapi api nyeni tenan i⁉️🔥💯, tema tergantung mood author" 
+Repository ini berisi dotfiles yang digunakan untuk setup Linux sehari-hari.  
+Konfigurasi dibuat berdasarkan preferensi pribadi dan dapat berubah sewaktu-waktu.
+
+Setup ini tidak dijamin cocok untuk workflow orang lain dan sebaiknya digunakan sebagai referensi, bukan solusi siap pakai.
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Clone Repository
 
 ```bash
 git clone https://github.com/Abiyyu-202/dotfilenya-takim.git ~/dotfiles
 cd ~/dotfiles
-```
+````
 
-### Install Symlinks
+### Pasang Symlink
 
 ```bash
-# Buat symlinks untuk semua config folders
 ln -s $(pwd)/fastfetch ~/.config/fastfetch
 ln -s $(pwd)/hypr ~/.config/hypr
 ln -s $(pwd)/swaylock ~/.config/swaylock
@@ -44,13 +43,15 @@ ln -s $(pwd)/waybar ~/.config/waybar
 ln -s $(pwd)/wofi ~/.config/wofi
 ln -s $(pwd)/niri ~/.config/niri
 
-# Copy starship config
 cp $(pwd)/starship.toml ~/.config/starship.toml
 ```
 
-### Install Dependencies
+---
 
-**Arch Linux:**
+## Dependencies
+
+### Arch Linux
+
 ```bash
 sudo pacman -S wlroots waybar wofi swaync pavucontrol swww grim \
   brightnessctl ttf-jetbrains-mono-nerd ttf-cascadia-code-nerd \
@@ -59,64 +60,54 @@ sudo pacman -S wlroots waybar wofi swaync pavucontrol swww grim \
 yay -S bibata-cursor-theme wlroots-git zen-browser-bin swaylock-effects
 ```
 
-**Fedora:**
-```bash
-sudo dnf install wlroots waybar wofi zsh pavucontrol brightnessctl foot nautilus
-```
+### Fedora
 
+```bash
+sudo dnf install wlroots waybar wofi zsh pavucontrol \
+  brightnessctl foot nautilus
+```
 > 💡 **Catatan**: Itu hanya app yang bisa diinstall dari repo resmi, beberapa paket di Fedora mungkin perlu dari COPR atau BUILD MANUAL. Cek dokumentasi resmi untuk detailnya.
 
-Intinya, di dalam situ harus ada:
-- WM: Hyprland, sama niri
-- Status Bar: Waybar
-- Launcher: Wofi
-- Notifier: Swaync
-- Lock Screen: Swaylock
-- System Info: Fastfetch
-- Shell Prompt: Starship
-- Audio: Pavucontrol
-- Brightness: Brightnessctl
-- Terminal: Kitty
-- File Manager: Nautilus
-- Cursor: Bibata (opsional, direkomendasikan)
+---
+
+## Komponen
+
+* Window Manager: Hyprland, Niri
+* Status Bar: Waybar
+* Launcher: Wofi
+* Notification: Swaync
+* Lock Screen: Swaylock
+* System Info: Fastfetch
+* Shell Prompt: Starship
+* Audio Control: Pavucontrol
+* Brightness: Brightnessctl
+* Terminal: Kitty
+* File Manager: Nautilus
+* Cursor: Bibata
 
 ---
 
-## ⚠️ Peringatan
+## Catatan
 
-> **Experimental Zone!** ⚠️
-> 
-> - 🎨 Warna, layout, bahkan seluruh setup bisa berubah sewaktu-waktu, Kadang kalo nemu wallpaper bagus suka kepengen ganti ini itu
-> - 📝 Config mungkin belum optimal untuk semua use case, jadi jangan harap workflow kalian cocok sama punya ku ini
-
----
-
-
-## 📚 Useful Resources
-> Trust me, kalian perlu ini karena aku ga pernah baca ini
-
-- [Hyprland Wiki](https://wiki.hyprland.org/)
-- [Waybar Documentation](https://github.com/Alexays/Waybar/wiki)
-- [Wofi GitHub](https://github.com/francMA/wofi)
-- [Nerd Fonts](https://www.nerdfonts.com/)
+* Konfigurasi bersifat eksperimental
+* Perubahan dapat terjadi tanpa pemberitahuan
+* Tidak dioptimalkan untuk semua use case
 
 ---
 
+## Referensi
 
-> ⚠️ **Experimental Zone!**  
-> Warna, layout, bahkan seluruh setup bisa berubah sewaktu-waktu.  
-> Kadang kalo nemu wallpaper bagus suka kepengen ganti ini itu
-
----
-## 🎯 Rencana Ke Depan
-
-Bakal ku customize makin ciamik lagi sih, terutama waybar nya masih kurang buat ku  
-
+* Hyprland Wiki — [LINK](https://wiki.hypr.land/)
+* Nerd Fonts — [LINK](https://www.nerdfonts.com/)
+* Niri Wiki — [LINK](https://www.nerdfonts.com/)
 
 ---
 
-## 💬 Penutup
+## Rencana
 
-Setup ini dibuat karena aku kebelet hyprland tapi ga bisa styling dll (thanks to deepseek and chatgpt)  
-> “Simpel, santai, keliatan ~~niat~~ banget tuh AI-nya.” — Abiyyu-202
+* Perbaikan dan penyesuaian Waybar
+* Peningkatan konsistensi konfigurasi
+* Fokus pada kenyamanan penggunaan
 
+```
+```
