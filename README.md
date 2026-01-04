@@ -108,6 +108,3 @@ sudo dnf install wlroots waybar wofi zsh pavucontrol \
 * Perbaikan dan penyesuaian Waybar
 * Peningkatan konsistensi konfigurasi
 * Fokus pada kenyamanan penggunaan
-
-```
-```
