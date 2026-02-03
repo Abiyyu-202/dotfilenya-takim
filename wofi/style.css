@@ -1,8 +1,8 @@
 window {
   margin: 5px;
-  border: 1px solid #64727d99;
+  border: 2px solid #64727d99;
   background-color: rgba(10, 10, 10, 0.82);
-  border-radius: 0px;
+  border-radius: 5px;
   font-family: 'Noto Sans', sans-serif;
 }
 
@@ -10,13 +10,11 @@ window {
   margin: 0;
   margin-bottom: 10px;
   padding: 7px;
-  /* balik ke ukuran semula */
   border: none;
-  border-radius: 0px;
+  border-radius: 2px;
   background-color: rgba(100, 100, 100, 0.45);
   color: #E5E5E5;
   font-size: 14px;
-  /* balik ke ukuran semula */
   width: 100%;
   box-sizing: border-box;
 }
@@ -38,7 +36,7 @@ window {
   margin: 0;
   padding: 8px;
   /* balik */
-  border-radius: 0px;
+  border-radius: 2px;
   /* no round */
   background-color: transparent;
   color: #E5E5E5;
