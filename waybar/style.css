@@ -1,7 +1,7 @@
 /* ── Global ────────────────────────────────────────── */
 * {
     font-family: "JetBrainsMono Nerd Font", "Symbols Nerd Font", monospace;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
     min-height: 0;
 }
@@ -31,8 +31,8 @@ tooltip label {
     background-color: rgba(20, 20, 20, 0.85);
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 999px;
-    padding: 0 12px;
-    margin: 4px 3px;
+    padding: 0 10px;
+    margin: 3px 2px;
 }
 
 /* ── Clock drawer pill ─────────────────────────────── */
@@ -40,15 +40,15 @@ box#clock {
     background-color: rgba(20, 20, 20, 0.85);
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 999px;
-    padding: 0 4px;
-    margin: 4px 3px;
+    padding: 0 3px;
+    margin: 3px 2px;
 }
 
 box#clock #clock {
     background: transparent;
     border: none;
     border-radius: 999px;
-    padding: 0 10px;
+    padding: 0 8px;
     margin: 0;
     font-weight: 700;
     color: #e0e0e0;
@@ -58,9 +58,9 @@ box#clock #clock {
     background: transparent;
     border: none;
     border-radius: 0;
-    padding: 0 8px 0 4px;
+    padding: 0 6px 0 2px;
     margin: 0;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 600;
     color: rgba(255, 255, 255, 0.6);
 }
@@ -72,10 +72,10 @@ box#clock #clock {
 
 #workspaces button {
     color: rgba(255, 255, 255, 0.3);
-    padding: 2px 8px;
-    margin: 2px 2px;
+    padding: 2px 6px;
+    margin: 1px 2px;
     border-radius: 999px;
-    min-width: 28px;
+    min-width: 24px;
     min-height: 0;
     border: none;
     background: transparent;
@@ -94,6 +94,11 @@ box#clock #clock {
     background-color: rgba(255, 255, 255, 0.06);
 }
 
+#workspaces button.urgent {
+  background-color: #ed8796;
+  animation: fadeInActive 0.5s ease-in-out;
+}
+
 /* ── Window title (center) ─────────────────────────── */
 #custom-window-title {
     color: rgba(255, 255, 255, 0.75);
@@ -105,8 +110,8 @@ box#status {
     background-color: rgba(20, 20, 20, 0.85);
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 999px;
-    padding: 0 4px;
-    margin: 4px 3px;
+    padding: 0 3px;
+    margin: 3px 2px;
 }
 
 /* ── Inner drawer groups (transparent, spaced) ─────── */
@@ -129,7 +134,7 @@ box#status #battery {
     background: transparent;
     border: none;
     border-radius: 999px;
-    padding: 0 8px;
+    padding: 0 7px;
     margin: 0;
     color: #e0e0e0;
     transition: all 200ms ease;
@@ -149,9 +154,9 @@ box#status #battery:hover {
     background: transparent;
     border: none;
     border-radius: 0;
-    padding: 0 6px;
+    padding: 0 4px;
     margin: 0;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 600;
     color: rgba(255, 255, 255, 0.7);
 }
@@ -183,8 +188,8 @@ box#status #battery:hover {
 
 #pulseaudio-slider slider,
 #backlight-slider slider {
-    min-width: 14px;
-    min-height: 14px;
+    min-width: 12px;
+    min-height: 12px;
     border-radius: 999px;
     background-color: #e0e0e0;
     border: none;
@@ -206,10 +211,10 @@ box#status #battery:hover {
 /* ── Power button ──────────────────────────────────── */
 #custom-power {
     color: #e06c75;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 700;
-    padding: 0 10px;
-    min-width: 18px;
+    padding: 0 8px;
+    min-width: 16px;
 }
 
 #custom-power:hover {
