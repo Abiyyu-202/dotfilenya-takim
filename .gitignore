@@ -7,8 +7,10 @@ BraveSoftware/
 /Electron/
 /github-copilot/
 /go/
-/gtl-3.0/
+/gtk-3.0/
+/Kingsoft/
 /kitty/
+/menus/
 /mozilla/
 /nautilus/
 /pulse/
@@ -18,5 +20,6 @@ BraveSoftware/
 /yay/
 /zen/
 kwalletrc
+kdeglobals
 mimeapps.list
 pavucontrol.ini
