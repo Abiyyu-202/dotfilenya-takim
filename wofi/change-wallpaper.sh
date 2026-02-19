@@ -28,15 +28,15 @@ for img in "$WALLPAPER_DIR"/*; do
 
   # Only regenerate if thumbnail is missing or older than original
   if [ ! -f "$thumb" ] || [ "$img" -nt "$thumb" ]; then
-    magick "$img" -resize 300x170^ -gravity center -extent 300x170 \
+    magick "$img" -resize 340x190^ -gravity center -extent 340x190 \
       -gravity south \
-      -fill "rgba(0,0,0,0.6)" -draw "rectangle 0,140,300,170" \
+      -fill "rgba(0,0,0,0.6)" -draw "rectangle 0,160,340,190" \
       -fill white -font "JetBrains-Mono-NL-Regular-Nerd-Font-Complete-Mono" \
       -pointsize 11 -gravity south -annotate +0+4 "$label" \
       "$thumb" 2>/dev/null || \
-    magick "$img" -resize 300x170^ -gravity center -extent 300x170 \
+    magick "$img" -resize 340x190^ -gravity center -extent 340x190 \
       -gravity south \
-      -fill "rgba(0,0,0,0.6)" -draw "rectangle 0,140,300,170" \
+      -fill "rgba(0,0,0,0.6)" -draw "rectangle 0,160,340,190" \
       -fill white -pointsize 11 -gravity south -annotate +0+4 "$label" \
       "$thumb"
   fi

@@ -1,6 +1,6 @@
 show=dmenu
 allow_images=true
-image_size=300
+image_size=340
 columns=3
 width=55%
 height=55%
