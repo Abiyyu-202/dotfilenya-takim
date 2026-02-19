@@ -1,110 +1,47 @@
-<div align="center">
+# my dotfiles lmao
 
-# Sebuah Dotfile Iseng
+Personal Linux dotfiles, Tested on Arch, Wayland-based.
 
-Dotfiles pribadi untuk setup Linux harian.  
-Opinionated, berbasis Wayland, dan tidak ditujukan sebagai konfigurasi universal.
-
-[![Arch Linux](https://img.shields.io/badge/Arch_Linux-%231793D1?logo=arch-linux&logoColor=white)](https://archlinux.org/)
-[![Hyprland](https://img.shields.io/badge/Hyprland-%23000000?logo=linux&logoColor=white)](https://hyprland.org/)
-[![Niri](https://img.shields.io/badge/Niri-8B5CF6?logo=linux&logoColor=white)](https://yalter.github.io/niri/)
-[![Wayland](https://img.shields.io/badge/Wayland-FFBC00?logo=wayland&logoColor=black)](https://wayland.freedesktop.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
-</div>
-
----
-
-## Tentang Repo Ini
-
-Repository ini berisi dotfiles yang digunakan untuk setup Linux sehari-hari.  
-Konfigurasi dibuat berdasarkan preferensi pribadi dan dapat berubah sewaktu-waktu.
-
-Setup ini tidak dijamin cocok untuk workflow orang lain dan sebaiknya digunakan sebagai referensi, bukan solusi siap pakai.
-
----
-
-## Quick Start
-
-### Clone Repository
+## Setup
 
 ```bash
 git clone https://github.com/Abiyyu-202/dotfilenya-takim.git ~/dotfiles
 cd ~/dotfiles
-````
-
-### Pasang Symlink
-
-```bash
-ln -s $(pwd)/fastfetch ~/.config/fastfetch
-ln -s $(pwd)/hypr ~/.config/hypr
-ln -s $(pwd)/swaylock ~/.config/swaylock
-ln -s $(pwd)/waybar ~/.config/waybar
-ln -s $(pwd)/wofi ~/.config/wofi
-ln -s $(pwd)/niri ~/.config/niri
-
-cp $(pwd)/starship.toml ~/.config/starship.toml
 ```
 
----
-
-## Dependencies
-
-### Arch Linux
+Symlink whatever you want. (I just threw the repo into ~/.config lmao):
 
 ```bash
-sudo pacman -S wlroots waybar wofi swaync pavucontrol swww grim \
-  brightnessctl ttf-jetbrains-mono-nerd ttf-cascadia-code-nerd \
-  woff2-font-awesome nautilus foot
-
-yay -S bibata-cursor-theme wlroots-git zen-browser-bin swaylock-effects
+for dir in fastfetch hypr swaylock waybar wofi niri; do
+  ln -sf $(pwd)/$dir ~/.config/$dir
+done
+cp starship.toml ~/.config/starship.toml
 ```
 
-### Fedora
+## Stack
+
+| Component | Tool |
+|-----------|------|
+| WM | Hyprland / Niri |
+| Bar | Waybar |
+| Launcher | Wofi |
+| Terminal | Kitty |
+| Lock | Swaylock |
+
+## Dependencies (Arch)
 
 ```bash
-sudo dnf install wlroots waybar wofi zsh pavucontrol \
-  brightnessctl foot nautilus
+sudo pacman -S wlroots waybar wofi swaync pavucontrol swww grim brightnessctl ttf-jetbrains-mono-nerd ttf-cascadia-code-nerd  woff2-font-awesome nautilus kitty wl-clipboard
+
+yay -S bibata-cursor-theme zen-browser-bin swaylock-effects
 ```
-> 💡 **Catatan**: Itu hanya app yang bisa diinstall dari repo resmi, beberapa paket di Fedora mungkin perlu dari COPR atau BUILD MANUAL. Cek dokumentasi resmi untuk detailnya.
+
+## Links
+
+- [Hyprland Wiki](https://wiki.hypr.land/)
+- [Niri](https://github.com/YaLTeR/niri)
+- [Nerd Fonts](https://www.nerdfonts.com/)
 
 ---
 
-## Komponen
-
-* Window Manager: Hyprland, Niri
-* Status Bar: Waybar
-* Launcher: Wofi
-* Notification: Swaync
-* Lock Screen: Swaylock
-* System Info: Fastfetch
-* Shell Prompt: Starship
-* Audio Control: Pavucontrol
-* Brightness: Brightnessctl
-* Terminal: Kitty
-* File Manager: Nautilus
-* Cursor: Bibata
-
----
-
-## Catatan
-
-* Konfigurasi bersifat eksperimental
-* Perubahan dapat terjadi tanpa pemberitahuan
-* Tidak dioptimalkan untuk semua use case
-
----
-
-## Referensi
-
-* Hyprland Wiki — [LINK](https://wiki.hypr.land/)
-* Nerd Fonts — [LINK](https://www.nerdfonts.com/)
-* Niri Wiki — [LINK](https://www.nerdfonts.com/)
-
----
-
-## Rencana
-
-* Perbaikan dan penyesuaian Waybar
-* Peningkatan konsistensi konfigurasi
-* Fokus pada kenyamanan penggunaan
+> Im still learning how to configure things you know, dont blame me if the code worse.
