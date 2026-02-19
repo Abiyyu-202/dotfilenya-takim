@@ -1,0 +1,15 @@
+show=dmenu
+allow_images=true
+image_size=340
+columns=3
+width=55%
+height=55%
+prompt=
+location=center
+insensitive=true
+hide_scroll=true
+key_up=k
+key_down=j
+key_left=h
+key_right=l
+key_exit=q
