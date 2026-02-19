@@ -57,6 +57,9 @@ WALLPAPER="$WALLPAPER_DIR/$SELECTED_FILE"
 cp "$WALLPAPER" "$HOME/.cache/wallpaper_rn.png"
 echo "$WALLPAPER" >"$HOME/.current_wallpaper"
 
+# Invalidate wofi background cache so it regenerates on next launch
+rm -f "$HOME/.cache/wofi-bg-src" 2>/dev/null
+
 $SWWW img "$WALLPAPER" \
   --transition-type grow \
   --transition-step 120 \
