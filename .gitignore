@@ -5,6 +5,7 @@ BraveSoftware/
 /dconf/
 /discord/
 /Electron/
+/fontconfig/
 /github-copilot/
 /go/
 /gtk-3.0/
@@ -25,3 +26,4 @@ kwalletrc
 kdeglobals
 mimeapps.list
 pavucontrol.ini
+brave-flags.conf
