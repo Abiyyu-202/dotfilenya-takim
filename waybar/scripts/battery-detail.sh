@@ -36,7 +36,7 @@ for bat in /sys/class/power_supply/BAT*; do
     fi
 
     case "$status" in
-        Charging)    printf '{"text": "%s%% %s", "class": "charging"}\n' "$capacity" "$time_str" ;;
+        Charging)    printf '{"text": "%s%% | Estimaed times:%s", "class": "charging"}\n' "$capacity" "$time_str" ;;
         Full)        printf '{"text": "Full", "class": "full"}\n' ;;
         Discharging) printf '{"text": "%s%%%s", "class": "discharging"}\n' "$capacity" "$time_str" ;;
         *)           printf '{"text": "%s%%", "class": "unknown"}\n' "$capacity" ;;
