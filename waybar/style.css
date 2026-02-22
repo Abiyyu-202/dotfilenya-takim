@@ -169,6 +169,16 @@ box#status #battery:hover {
     border-radius: 0;
     padding: 0 4px;
     margin: 0;
+    outline: none;
+    box-shadow: none;
+    -gtk-outline-radius: 0;
+}
+
+#pulseaudio-slider scale,
+#backlight-slider scale {
+    outline: none;
+    box-shadow: none;
+    border: none;
 }
 
 #pulseaudio-slider trough,
@@ -177,6 +187,9 @@ box#status #battery:hover {
     min-height: 6px;
     border-radius: 999px;
     background-color: rgba(255, 255, 255, 0.08);
+    outline: none;
+    box-shadow: none;
+    border: none;
 }
 
 #pulseaudio-slider highlight,
@@ -184,15 +197,22 @@ box#status #battery:hover {
     min-height: 6px;
     border-radius: 999px;
     background-color: rgba(255, 255, 255, 0.4);
+    outline: none;
+    box-shadow: none;
+    border: none;
 }
 
 #pulseaudio-slider slider,
 #backlight-slider slider {
-    min-width: 12px;
-    min-height: 12px;
-    border-radius: 999px;
-    background-color: #e0e0e0;
+    min-width: 0;
+    min-height: 0;
+    border-radius: 0;
+    background: transparent;
     border: none;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-shadow: none;
 }
 
 /* ── Tray ──────────────────────────────────────────── */
