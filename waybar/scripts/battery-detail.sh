@@ -38,7 +38,7 @@ for bat in /sys/class/power_supply/BAT*; do
     case "$status" in
         Charging)    printf '{"text": "%s%% | Estimaed times:%s", "class": "charging"}\n' "$capacity" "$time_str" ;;
         Full)        printf '{"text": "Full", "class": "full"}\n' ;;
-        Discharging) printf '{"text": "%s%%%s", "class": "discharging"}\n' "$capacity" "$time_str" ;;
+        Discharging) printf '{"text": "%s%% | Estimaed times:%s", "class": "discharging"}\n' "$capacity" "$time_str" ;;
         *)           printf '{"text": "%s%%", "class": "unknown"}\n' "$capacity" ;;
     esac
     exit 0
