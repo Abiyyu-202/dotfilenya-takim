@@ -146,8 +146,7 @@
     "custom/network-ssid": {
         "exec": "~/.config/waybar/scripts/network-ssid.sh",
         "return-type": "json",
-        "interval": 5,
-        "max-length": 16
+        "interval": 5
     },
 
     // ── Audio (icon only) ───────────────────────────────
