@@ -45,6 +45,7 @@ layout {
     default-column-width { proportion 0.5; }
 
     focus-ring {
+        off
         width 1
         active-color "#ffffff"
         inactive-color "#505050"
@@ -79,7 +80,7 @@ spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 spawn-at-startup "discord"
 spawn-at-startup "swww-daemon"
 spawn-at-startup "steam"
-spawn-at-startup "sh" "-c" "/home/toheartz/.config/niri/swayidle.sh"
+spawn-at-startup "hypridle"
 
 hotkey-overlay {
     skip-at-startup
