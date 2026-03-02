@@ -9,8 +9,8 @@
 
     "modules-left": [
         "group/clock",
-        "hyprland/workspaces",
-        "niri/workspaces"
+        "niri/workspaces",
+        "hyprland/workspaces"
     ],
 
     "modules-center": [
@@ -48,7 +48,7 @@
         ]
     },
 
-    // ── Drawer: Network (icon → name on hover) ─────────
+    // ── Drawer: Network (smart icon → SSID on hover) ────
     "group/network": {
         "orientation": "horizontal",
         "drawer": {
@@ -57,12 +57,12 @@
             "transition-left-to-right": true
         },
         "modules": [
-            "network",
+            "custom/network-smart",
             "custom/network-ssid"
         ]
     },
 
-    // ── Drawer: Audio (icon → slider on hover) ─────────
+    // ── Drawer: Audio (smart icon → slider on hover) ───
     "group/audio": {
         "orientation": "horizontal",
         "drawer": {
@@ -71,12 +71,12 @@
             "transition-left-to-right": true
         },
         "modules": [
-            "pulseaudio",
+            "custom/pulseaudio-smart",
             "pulseaudio/slider"
         ]
     },
 
-    // ── Drawer: Brightness (icon → slider on hover) ────
+    // ── Drawer: Brightness (smart icon → slider on hover)
     "group/brightness": {
         "orientation": "horizontal",
         "drawer": {
@@ -85,7 +85,7 @@
             "transition-left-to-right": true
         },
         "modules": [
-            "backlight",
+            "custom/backlight-smart",
             "backlight/slider"
         ]
     },
@@ -133,15 +133,11 @@
         "interval": 60
     },
 
-    // ── Network (icon only) ─────────────────────────────
-    "network": {
-        "interval": 3,
-        "format-wifi": "󰤨",
-        "format-ethernet": "󰌗",
-        "format-disconnected": "󰤭",
-        "tooltip-format-wifi": "  {essid}\n󰣺  {signalStrength}%\n󰩟  {ipaddr}",
-        "tooltip-format-ethernet": "󰌗  {ifname}\n󰩟  {ipaddr}",
-        "tooltip-format-disconnected": "󰤭  Disconnected"
+    // ── Network smart (auto-expand on connect/disconnect)
+    "custom/network-smart": {
+        "exec": "~/.config/waybar/scripts/network-smart.sh",
+        "return-type": "json",
+        "interval": 1
     },
 
     "custom/network-ssid": {
@@ -150,7 +146,22 @@
         "interval": 5
     },
 
-    // ── Audio (icon only) ───────────────────────────────
+    // ── Audio smart (auto-expand on volume change) ──────
+    "custom/pulseaudio-smart": {
+        "exec": "~/.config/waybar/scripts/pulseaudio-smart.sh",
+        "return-type": "json",
+        "interval": 1,
+        "on-click": "pavucontrol"
+    },
+
+    // ── Brightness smart (auto-expand on change) ────────
+    "custom/backlight-smart": {
+        "exec": "~/.config/waybar/scripts/backlight-smart.sh",
+        "return-type": "json",
+        "interval": 1
+    },
+
+    // ── (kept for drawer hover child) ───────────────────
     "pulseaudio": {
         "format": "{icon}",
         "format-bluetooth": "{icon} ",
@@ -165,17 +176,11 @@
         "on-click": "pavucontrol"
     },
 
+    // ── Slider children (shown on hover via drawer) ────
     "pulseaudio/slider": {
         "min": 0,
         "max": 100,
         "orientation": "horizontal"
-    },
-
-    // ── Brightness (icon only) ──────────────────────────
-    "backlight": {
-        "format": "{icon}",
-        "format-icons": ["󰃞", "󰃟", "󰃠"],
-        "tooltip-format": "󰃠  Brightness: {percent}%"
     },
 
     "backlight/slider": {

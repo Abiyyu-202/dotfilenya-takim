@@ -2,7 +2,7 @@
 # Unified window title script (Hyprland + Niri + NVIM) — UTF-8 SAFE
 
 # Detect compositor
-if command -v hyprctl >/dev/null 2>&1; then
+if [[ -n "$HYPRLAND_INSTANCE_SIGNATURE" ]] && command -v hyprctl >/dev/null 2>&1; then
   json=$(hyprctl -j activewindow 2>/dev/null)
   class=$(jq -r '.class // ""' <<<"$json")
   title=$(jq -r '.title // ""' <<<"$json")

@@ -81,6 +81,7 @@ spawn-at-startup "discord"
 spawn-at-startup "swww-daemon"
 spawn-at-startup "steam"
 spawn-at-startup "hypridle"
+spawn-at-startup "swaync"
 
 hotkey-overlay {
     skip-at-startup
@@ -137,17 +138,18 @@ binds {
     Mod+D hotkey-overlay-title="Run an Application: Wofi" { spawn "wofi"; }
     Mod+E { spawn "nautilus"; }
     Mod+B { spawn "brave"; }
-    Mod+S { spawn "spotify-launcher"; }
+    Mod+S { spawn "spotify"; }
     Mod+Z { spawn "zen-browser"; }
     Mod+Alt+R { spawn "flatpak run org.vinegarhq.Sober"; }
     Mod+Tab { spawn "code"; }
+    Mod+A {spawn "antigravity";}
 
     // System controls
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "hyprlock"; }
     Super+Ctrl+W { spawn "~/.config/wofi/change-wallpaper.sh"; }
     Super+ctrl+e { spawn "wofi-emoji"; }
     Mod+Shift+W hotkey-overlay-title="Reload Waybar" { spawn "sh" "-c" "pkill waybar; waybar &"; }
-    Mod+M { spawn "swaync-client -t"; }
+    Mod+N { spawn "swaync-client -t"; }
 
     // Audio
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+"; }
@@ -287,6 +289,8 @@ binds {
     // Session
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
     Mod+Shift+E { quit; }
+    
+   Mod+Shift+P { power-off-monitors; } 
 
     
 
