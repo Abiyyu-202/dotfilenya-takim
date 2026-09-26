@@ -78,10 +78,13 @@ layout {
 spawn-at-startup "waybar"
 spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 spawn-at-startup "discord"
-spawn-at-startup "swww-daemon"
+spawn-sh-at-startup "~/.config/hypr/init-wallpaper.sh"
 spawn-at-startup "steam"
 spawn-at-startup "hypridle"
 spawn-at-startup "swaync"
+spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
+spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
+spawn-at-startup "wl-clip-persist" "--clipboard" "regular"
 
 hotkey-overlay {
     skip-at-startup
@@ -139,7 +142,7 @@ binds {
     Mod+E { spawn "nautilus"; }
     Mod+B { spawn "brave"; }
     Mod+S { spawn "spotify"; }
-    Mod+Z { spawn "zen-browser"; }
+    Mod+Z { spawn "brave"; }
     Mod+Alt+R { spawn "flatpak run org.vinegarhq.Sober"; }
     Mod+Tab { spawn "code"; }
     Mod+A {spawn "antigravity";}
@@ -148,6 +151,7 @@ binds {
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "hyprlock"; }
     Super+Ctrl+W { spawn "~/.config/wofi/change-wallpaper.sh"; }
     Super+ctrl+e { spawn "wofi-emoji"; }
+    Mod+V { spawn "sh" "-c" "cliphist list | wofi --dmenu | cliphist decode | wl-copy"; }
     Mod+Shift+W hotkey-overlay-title="Reload Waybar" { spawn "sh" "-c" "pkill waybar; waybar &"; }
     Mod+N { spawn "swaync-client -t"; }
 

@@ -1,0 +1,19 @@
+-- Input and device configuration
+hl.config({
+    input = {
+        kb_layout = "us",
+        follow_mouse = 1,
+        repeat_rate = 30,
+        repeat_delay = 200,
+        sensitivity = 0,
+        touchpad = {
+            natural_scroll = true,
+        },
+    },
+})
+
+hl.device({
+    name = "usb-gaming-mouse",
+    sensitivity = 0,
+    accel_profile = "flat",
+})

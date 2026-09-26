@@ -26,8 +26,7 @@ tooltip label {
 /* ── Shared pill base ──────────────────────────────── */
 #workspaces,
 #custom-window-title,
-#tray,
-#custom-power {
+#tray {
     background-color: rgba(20, 20, 20, 0.85);
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 999px;
@@ -71,11 +70,11 @@ box#clock #clock {
 }
 
 #workspaces button {
-    color: rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.35);
     padding: 2px 6px;
     margin: 2px;
     border-radius: 999px;
-    min-width: 30px;
+    min-width: 28px;
     min-height: 0;
     border: none;
     background: transparent;
@@ -87,6 +86,14 @@ box#clock #clock {
     color: #ffffff;
     background-color: rgba(255, 255, 255, 0.15);
     font-weight: 700;
+}
+
+#workspaces button.empty {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+#workspaces button.persistent:not(.empty) {
+    color: rgba(255, 255, 255, 0.6);
 }
 
 #workspaces button:hover {
@@ -271,11 +278,19 @@ box#status #battery:hover {
 
 /* ── Power button ──────────────────────────────────── */
 #custom-power {
+    background-color: rgba(20, 20, 20, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 999px;
     color: #e06c75;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 700;
     padding: 0 8px;
-    min-width: 16px;
+    margin: 3px 2px;
+}
+
+#custom-power label {
+    margin: 0;
+    padding: 0;
 }
 
 #custom-power:hover {

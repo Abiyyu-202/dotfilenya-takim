@@ -106,9 +106,16 @@
 
     // ── Workspaces ──────────────────────────────────────
     "hyprland/workspaces": {
-        "format": "{name}",
-        "on-click": "activate",
-        "sort-by-number": true
+        "format": "{icon}",
+        "sort-by-number": true,
+        "persistent-workspaces": {
+            "*": [1, 2, 3]
+        },
+        "format-icons": {
+            "active": "",
+            "empty": "",
+            "default": ""
+        }
     },
 
     // ── Window title (center) ───────────────────────────
@@ -220,7 +227,7 @@
 
     // ── Power ───────────────────────────────────────────
     "custom/power": {
-        "format": "⏻",
+        "format": "",
         "tooltip": false,
         "menu": "on-click",
         "menu-file": "~/.config/waybar/power-menu.xml",

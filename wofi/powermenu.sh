@@ -13,14 +13,14 @@ Reboot)
 
 Logout)
   # Niri logout
-  if command -v niri session >/dev/null 2>&1; then
-    niri session close-all
+  if [ -n "$NIRI_SOCKET" ] || [[ "$XDG_CURRENT_DESKTOP" == *"niri"* ]]; then
+    niri msg action quit -s
     exit
   fi
 
   # Hyprland logout
-  if command -v hyprctl >/dev/null 2>&1; then
-    hyprctl dispatch exit 0
+  if [ -n "$HYPRLAND_INSTANCE_SIGNATURE" ] || [[ "$XDG_CURRENT_DESKTOP" == *"Hyprland"* ]]; then
+    hyprctl dispatch exit
     exit
   fi
 
