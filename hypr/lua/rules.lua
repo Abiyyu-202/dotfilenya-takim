@@ -40,6 +40,7 @@ hl.layer_rule({
     name = "wofi-blur",
     match = { namespace = "^(wofi)$" },
     blur = true,
+    ignore_alpha = 0.5,
 })
 
 hl.layer_rule({
