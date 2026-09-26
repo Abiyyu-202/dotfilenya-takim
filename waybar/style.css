@@ -26,7 +26,8 @@ tooltip label {
 /* ── Shared pill base ──────────────────────────────── */
 #workspaces,
 #custom-window-title,
-#tray {
+#tray,
+#custom-power {
     background-color: rgba(20, 20, 20, 0.85);
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 999px;
@@ -278,19 +279,11 @@ box#status #battery:hover {
 
 /* ── Power button ──────────────────────────────────── */
 #custom-power {
-    background-color: rgba(20, 20, 20, 0.85);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 999px;
     color: #e06c75;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 700;
     padding: 0 8px;
-    margin: 3px 2px;
-}
-
-#custom-power label {
-    margin: 0;
-    padding: 0;
+    min-width: 16px;
 }
 
 #custom-power:hover {

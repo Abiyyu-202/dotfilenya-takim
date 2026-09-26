@@ -1,77 +1,100 @@
+/* ── Global ────────────────────────────────────────── */
+* {
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 13px;
+}
+
+/* ── Window ────────────────────────────────────────── */
 window {
-  margin: 5px;
-  border: 2px solid #64727d99;
-  background-color: rgba(10, 10, 10, 0.82);
-  border-radius: 5px;
-  font-family: 'Noto Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(18, 18, 24, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.55);
 }
 
-#input {
-  margin: 0;
-  margin-bottom: 10px;
-  padding: 7px;
-  border: none;
-  border-radius: 2px;
-  background-color: rgba(100, 100, 100, 0.45);
-  color: #E5E5E5;
-  font-size: 14px;
-  width: 100%;
-  box-sizing: border-box;
-}
-
+/* ── Outer box ─────────────────────────────────────── */
 #outer-box {
-  margin: 8px;
-  background-color: transparent;
+    margin: 0;
+    padding: 16px;
+    background-color: transparent;
+    border: none;
 }
 
-#inner-box,
+/* ── Search Input ──────────────────────────────────── */
+#input {
+    margin: 0 0 12px 0;
+    padding: 10px 16px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #e0e0e0;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+#input:focus {
+    border: 1px solid rgba(137, 180, 250, 0.4);
+    background-color: rgba(255, 255, 255, 0.07);
+}
+
+#input image {
+    color: rgba(255, 255, 255, 0.4);
+    margin-right: 8px;
+}
+
+/* ── List / Scrolled area ──────────────────────────── */
 #scroll {
-  margin: 0;
-  padding: 0;
-  background-color: transparent;
-  border: none;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    border: none;
 }
 
+#inner-box {
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+}
+
+/* ── Entries ───────────────────────────────────────── */
 #entry {
-  margin: 0;
-  padding: 8px;
-  /* balik */
-  border-radius: 2px;
-  /* no round */
-  background-color: transparent;
-  color: #E5E5E5;
-  width: 100%;
-  box-sizing: border-box;
+    margin: 2px 0;
+    padding: 8px 12px;
+    border-radius: 10px;
+    background-color: transparent;
+    border: 1px solid transparent;
 }
 
 #entry:selected {
-  background-color: #ffffff;
-  border: none;
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
+/* ── Entry Text ────────────────────────────────────── */
 #text {
-  color: #E5E5E5;
-  font-size: 13px;
-  /* balik semula */
+    margin: 0;
+    padding: 0;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 13px;
+    font-weight: 500;
 }
 
-#text:selected {
-  color: #000000;
+#entry:selected #text {
+    color: #ffffff;
+    font-weight: 600;
 }
 
+/* ── Entry Icon ────────────────────────────────────── */
 #img {
-  margin-right: 10px;
-  /* balik semula */
+    margin-right: 12px;
+    background-color: transparent;
+    border-radius: 6px;
 }
 
-
-#expander {
-  opacity: 0;
-  margin: 0;
-  padding: 0;
-  width: 0;
-}
-
-#expander image {
-  opacity: 0;
+/* ── Scrollbar ─────────────────────────────────────── */
+scrollbar {
+    opacity: 0;
 }
