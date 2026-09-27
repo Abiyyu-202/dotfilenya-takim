@@ -235,8 +235,8 @@
             "shutdown": "shutdown now",
             "reboot": "shutdown -r now",
             "suspend": "systemctl suspend",
-            "logout": "hyprctl dispatch exit",
-            "lock": "~/.config/swaylock/lockscreen.sh"
+            "logout": "hyprctl dispatch 'hl.dsp.exit()' || pkill -x Hyprland",
+            "lock": "hyprlock"
         }
     }
 }

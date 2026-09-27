@@ -12,3 +12,6 @@ require("look")
 require("layouts")
 require("binds")
 require("rules")
+
+-- Backward compatibility for hyprctl dispatch exit
+_G.exit = hl.dsp.exit()

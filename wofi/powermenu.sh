@@ -20,7 +20,7 @@ case "$choice" in
 
   # Hyprland logout
   if [ -n "$HYPRLAND_INSTANCE_SIGNATURE" ] || [[ "$XDG_CURRENT_DESKTOP" == *"Hyprland"* ]]; then
-    hyprctl dispatch exit
+    hyprctl dispatch 'hl.dsp.exit()' 2>/dev/null || hyprctl dispatch exit 2>/dev/null || pkill -x Hyprland
     exit
   fi
 

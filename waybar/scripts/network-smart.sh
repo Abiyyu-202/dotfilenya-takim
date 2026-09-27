@@ -2,25 +2,28 @@
 STATE_FILE="/tmp/waybar-network-smart.state"
 NOW=$(date +%s)
 
+eth=$(nmcli -t -f type,state dev 2>/dev/null | awk -F: '$1=="ethernet" && $2=="connected" {found=1; exit} END {exit !found}' && echo "yes")
 wifi_ssid=$(nmcli -t -f active,ssid dev wifi 2>/dev/null | awk -F: '$1=="yes" {print $2; exit}')
-if [[ -n "$wifi_ssid" ]]; then
+
+if [[ "$eth" == "yes" ]]; then
+    current_value="ethernet"
+    icon="󰌗"
+    detail="Ethernet"
+    if [[ -n "$wifi_ssid" ]]; then
+        tooltip="󰌗  Ethernet (Aktif)\n󰤨  Wi-Fi: $wifi_ssid"
+    else
+        tooltip="󰌗  Ethernet"
+    fi
+elif [[ -n "$wifi_ssid" ]]; then
     current_value="wifi:$wifi_ssid"
     icon="󰤨"
     detail="$wifi_ssid"
-    tooltip="  $wifi_ssid"
+    tooltip="󰤨  $wifi_ssid"
 else
-    eth=$(nmcli -t -f type,state dev 2>/dev/null | awk -F: '$1=="ethernet" && $2=="connected" {found=1; exit} END {exit !found}' && echo "yes")
-    if [[ "$eth" == "yes" ]]; then
-        current_value="ethernet"
-        icon="󰌗"
-        detail="Ethernet"
-        tooltip="󰌗  Ethernet"
-    else
-        current_value="offline"
-        icon="󰤭"
-        detail="Offline"
-        tooltip="󰤭  Disconnected"
-    fi
+    current_value="offline"
+    icon="󰤭"
+    detail="Offline"
+    tooltip="󰤭  Disconnected"
 fi
 
 previous_value=""
