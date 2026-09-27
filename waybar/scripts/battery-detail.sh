@@ -35,11 +35,19 @@ for bat in /sys/class/power_supply/BAT*; do
         fi
     fi
 
+    profile=$(powerprofilesctl get 2>/dev/null || echo "")
+    p_badge=""
+    case "$profile" in
+        performance) p_badge=" [Perf]" ;;
+        balanced)    p_badge=" [Bal]" ;;
+        power-saver) p_badge=" [Save]" ;;
+    esac
+
     case "$status" in
-        Charging)    printf '{"text": "%s%% | Estimaed times:%s", "class": "charging"}\n' "$capacity" "$time_str" ;;
-        Full)        printf '{"text": "Full", "class": "full"}\n' ;;
-        Discharging) printf '{"text": "%s%% | Estimaed times:%s", "class": "discharging"}\n' "$capacity" "$time_str" ;;
-        *)           printf '{"text": "%s%%", "class": "unknown"}\n' "$capacity" ;;
+        Charging)    printf '{"text": "%s%%%s | Est:%s", "class": "charging"}\n' "$capacity" "$p_badge" "$time_str" ;;
+        Full)        printf '{"text": "Full%s", "class": "full"}\n' "$p_badge" ;;
+        Discharging) printf '{"text": "%s%%%s | Est:%s", "class": "discharging"}\n' "$capacity" "$p_badge" "$time_str" ;;
+        *)           printf '{"text": "%s%%%s", "class": "unknown"}\n' "$capacity" "$p_badge" ;;
     esac
     exit 0
 done

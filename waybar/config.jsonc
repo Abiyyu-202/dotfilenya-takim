@@ -144,13 +144,17 @@
     "custom/network-smart": {
         "exec": "~/.config/waybar/scripts/network-smart.sh",
         "return-type": "json",
-        "interval": 1
+        "interval": 1,
+        "on-click": "~/.config/waybar/scripts/toggle-network-manager.sh",
+        "on-click-right": "~/.config/waybar/scripts/toggle-hotspot.sh"
     },
 
     "custom/network-ssid": {
         "exec": "~/.config/waybar/scripts/network-ssid.sh",
         "return-type": "json",
-        "interval": 5
+        "interval": 5,
+        "on-click": "~/.config/waybar/scripts/toggle-network-manager.sh",
+        "on-click-right": "~/.config/waybar/scripts/toggle-hotspot.sh"
     },
 
     // ── Audio smart (auto-expand on volume change) ──────
@@ -209,15 +213,21 @@
         "format-plugged": "󰚥",
         "format-full": "󰁹",
         "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-        "tooltip-format": "  {capacity}%",
-        "tooltip-format-charging": "󰂄  Charging {capacity}%",
-        "tooltip-format-full": "󰁹  Fully charged"
+        "tooltip-format": "  {capacity}%\nKlik: Menu Mode Daya\nKlik Kanan / Scroll: Ganti Profil",
+        "tooltip-format-charging": "󰂄  Charging {capacity}%\nKlik: Menu Mode Daya\nKlik Kanan / Scroll: Ganti Profil",
+        "tooltip-format-full": "󰁹  Fully charged\nKlik: Menu Mode Daya\nKlik Kanan / Scroll: Ganti Profil",
+        "on-click": "~/.config/waybar/scripts/power-profiles-menu.sh",
+        "on-click-right": "~/.config/waybar/scripts/cycle-power-profile.sh",
+        "on-scroll-up": "powerprofilesctl set performance && notify-send -u low -i preferences-system-power 'Mode Daya' 'Mode Performance'",
+        "on-scroll-down": "powerprofilesctl set power-saver && notify-send -u low -i preferences-system-power 'Mode Daya' 'Mode Power Saver'"
     },
 
     "custom/battery-detail": {
         "exec": "~/.config/waybar/scripts/battery-detail.sh",
         "return-type": "json",
-        "interval": 10
+        "interval": 10,
+        "on-click": "~/.config/waybar/scripts/power-profiles-menu.sh",
+        "on-click-right": "~/.config/waybar/scripts/cycle-power-profile.sh"
     },
 
     // ── Tray ────────────────────────────────────────────

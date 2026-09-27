@@ -36,6 +36,14 @@ hl.window_rule({
     opacity = "0.92 0.82",
 })
 
+hl.window_rule({
+    name = "plasmawindowed-float",
+    match = { class = "^(org\\.kde\\.plasmawindowed)$" },
+    float = true,
+    size = "500 600",
+    center = true,
+})
+
 hl.layer_rule({
     name = "wofi-blur",
     match = { namespace = "^(wofi)$" },
