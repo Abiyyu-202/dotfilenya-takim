@@ -1,3 +1,5 @@
+@import "colors.css";
+
 /* ── Global ────────────────────────────────────────── */
 * {
     font-family: "JetBrainsMono Nerd Font", "Symbols Nerd Font", monospace;
@@ -28,20 +30,22 @@ tooltip label {
 #custom-window-title,
 #tray,
 #custom-power {
-    background-color: rgba(20, 20, 20, 0.85);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background-color: alpha(@surface, 0.85);
+    border: 1px solid alpha(@outline_variant, 0.2);
     border-radius: 999px;
     padding: 0 10px;
     margin: 3px 2px;
+    transition: background-color 300ms ease, border-color 300ms ease;
 }
 
 /* ── Clock drawer pill ─────────────────────────────── */
 box#clock {
-    background-color: rgba(20, 20, 20, 0.85);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background-color: alpha(@surface, 0.85);
+    border: 1px solid alpha(@outline_variant, 0.2);
     border-radius: 999px;
     padding: 0 3px;
     margin: 3px 2px;
+    transition: background-color 300ms ease, border-color 300ms ease;
 }
 
 box#clock #clock {
@@ -51,7 +55,7 @@ box#clock #clock {
     padding: 0 8px;
     margin: 0;
     font-weight: 700;
-    color: #e0e0e0;
+    color: @on_surface;
 }
 
 #custom-date {
@@ -62,7 +66,7 @@ box#clock #clock {
     margin: 0;
     font-size: 11px;
     font-weight: 600;
-    color: rgba(255, 255, 255, 0.6);
+    color: alpha(@on_surface, 0.6);
 }
 
 /* ── Workspaces container ──────────────────────────── */
@@ -71,7 +75,7 @@ box#clock #clock {
 }
 
 #workspaces button {
-    color: rgba(255, 255, 255, 0.35);
+    color: alpha(@on_surface, 0.4);
     padding: 2px 6px;
     margin: 2px;
     border-radius: 999px;
@@ -84,22 +88,22 @@ box#clock #clock {
 }
 
 #workspaces button.active {
-    color: #ffffff;
-    background-color: rgba(255, 255, 255, 0.15);
+    color: @primary;
+    background-color: alpha(@primary, 0.25);
     font-weight: 700;
 }
 
 #workspaces button.empty {
-    color: rgba(255, 255, 255, 0.2);
+    color: alpha(@on_surface, 0.2);
 }
 
 #workspaces button.persistent:not(.empty) {
-    color: rgba(255, 255, 255, 0.6);
+    color: alpha(@on_surface, 0.6);
 }
 
 #workspaces button:hover {
-    color: rgba(255, 255, 255, 0.7);
-    background-color: rgba(255, 255, 255, 0.06);
+    color: @on_surface;
+    background-color: alpha(@primary, 0.15);
 }
 
 #workspaces button.urgent {
@@ -115,11 +119,12 @@ box#clock #clock {
 
 /* ── Outer status pill ─────────────────────────────── */
 box#status {
-    background-color: rgba(20, 20, 20, 0.85);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background-color: alpha(@surface, 0.85);
+    border: 1px solid alpha(@outline_variant, 0.2);
     border-radius: 999px;
     padding: 0 3px;
     margin: 3px 2px;
+    transition: background-color 300ms ease, border-color 300ms ease;
 }
 
 /* ── Inner drawer groups (transparent, spaced) ─────── */
@@ -176,8 +181,8 @@ box#status #battery:hover {
 #custom-pulseaudio-smart.expanded,
 #custom-backlight-smart.expanded {
     padding: 0 12px;
-    background-color: rgba(255, 255, 255, 0.07);
-    color: #ffffff;
+    background-color: alpha(@primary, 0.2);
+    color: @primary;
 }
 
 #custom-network-smart.collapsed,
@@ -245,7 +250,7 @@ box#status #battery:hover {
 #backlight-slider highlight {
     min-height: 6px;
     border-radius: 999px;
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: @primary;
     outline: none;
     box-shadow: none;
     border: none;

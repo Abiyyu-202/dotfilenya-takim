@@ -13,5 +13,8 @@ require("layouts")
 require("binds")
 require("rules")
 
--- Backward compatibility for hyprctl dispatch exit
+-- Backward compatibility for hyprctl dispatch exit and dpms
 _G.exit = hl.dsp.exit()
+_G.dpms = function(state)
+	return hl.dsp.dpms(state)
+end

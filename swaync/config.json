@@ -33,24 +33,15 @@
   "text-empty": "No Notifications",
   "script-fail-notify": true,
   "scripts": {
-    "example-script": {
-      "app-name": "example.app.id",
-      "exec": "echo 'Do something...'",
-      "urgency": "Normal"
+    "usb-sound": {
+      "app-name": "USB Monitor",
+      "exec": ":"
     },
-    "example-action-script": {
-      "app-name": "example.app.id",
-      "exec": "echo 'Do something actionable!'",
-      "urgency": "Normal",
-      "run-on": "action"
+    "notification-sound": {
+      "exec": "canberra-gtk-play -i message"
     }
   },
   "notification-visibility": {
-    "example-name": {
-      "state": "muted",
-      "urgency": "Normal",
-      "app-name": "example.app.id"
-    }
   },
   "widgets": [
     "inhibitors",

@@ -1,84 +1,104 @@
+@import url("file:///home/yurei/.config/wofi/colors.css");
+
+/* ── Global ────────────────────────────────────────── */
+* {
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 13px;
+}
+
+/* ── Window ────────────────────────────────────────── */
 window {
-  margin: 0;
-  padding: 0;
-  border: none;
-  background-color: rgba(0, 0, 0, 0.95);
-  border-radius: 6;
-  font-family: 'JetBrainsMono Nerd Font', 'JetBrains Mono', monospace;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
 }
 
-#input {
-  margin: 0;
-  margin-bottom: 10px;
-  padding: 7px;
-  border: none;
-  border-radius: 2px;
-  background-color: rgba(100, 100, 100, 0.45);
-  color: #E5E5E5;
-  font-size: 14px;
-  width: 100%;
-  box-sizing: border-box;
-}
-
+/* ── Outer box ─────────────────────────────────────── */
 #outer-box {
-  margin: 10px;
-  padding: 0;
-  background-color: transparent;
+    margin: 0;
+    padding: 16px;
+    background-color: alpha(@surface, 0.88);
+    border: 1px solid alpha(@outline_variant, 0.25);
+    border-radius: 16px;
 }
 
-#inner-box,
+/* ── Search Input ──────────────────────────────────── */
+#input {
+    margin: 0 0 12px 0;
+    padding: 10px 18px;
+    border-radius: 999px;
+    border: 1px solid alpha(@outline_variant, 0.3);
+    background-color: alpha(@surface_container, 0.5);
+    color: @on_surface;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+#input:focus {
+    border: 1px solid @primary;
+    background-color: alpha(@surface_container_high, 0.7);
+}
+
+#input image {
+    color: rgba(255, 255, 255, 0.4);
+    margin-right: 8px;
+}
+
+/* ── Scrolled / inner container ────────────────────── */
 #scroll {
-  margin: 0;
-  padding: 0;
-  background-color: transparent;
-  border: none;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    border: none;
 }
 
+#inner-box {
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+}
+
+/* ── Wallpaper tile entry ──────────────────────────── */
 #entry {
-  margin: 3px;
-  padding: 0;
-  border-radius: 6px;
-  background-color: transparent;
-  border: 2px solid transparent;
-  box-sizing: border-box;
+    margin: 4px;
+    padding: 2px;
+    border-radius: 4px;
+    background-color: transparent;
+    border: 2px solid transparent;
 }
 
 #entry:selected {
-  background-color: rgba(150, 150, 150, 0.4);
-  border: 2px solid rgba(200, 200, 200, 0.6);
-  border-radius: 6px;
+    background-color: alpha(@primary, 0.1);
+    border: 2px solid @primary;
+    border-radius: 4px;
 }
 
+/* ── Thumbnail image ───────────────────────────────── */
+#img {
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+}
+
+/* ── Hide text element (filename is in thumbnail) ──── */
 #text {
-  font-size: 0;
-  margin: 0;
-  padding: 0;
-  opacity: 0;
-  min-height: 0;
-  min-width: 0;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    font-size: 0px;
+    min-height: 0px;
+    min-width: 0px;
 }
 
 #text:selected {
-  font-size: 0;
-  margin: 0;
-  padding: 0;
-  opacity: 0;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    font-size: 0px;
 }
 
-#img {
-  border-radius: 4px;
-  margin: 0;
-  padding: 0;
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
-#expander {
-  opacity: 0;
-  margin: 0;
-  padding: 0;
-  width: 0;
-}
-
-#expander image {
-  opacity: 0;
+/* ── Scrollbar ─────────────────────────────────────── */
+scrollbar {
+    opacity: 0;
 }

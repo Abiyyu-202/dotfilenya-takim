@@ -61,3 +61,6 @@ user-dirs.locale
 plasma-org.kde.plasma.desktop-appletsrc
 QtProject.conf
 droidcam
+*colors.css
+/ghostty/colors
+

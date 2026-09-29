@@ -24,3 +24,7 @@ awww img "$WALLPAPER" \
     --transition-fps 120 \
     --transition-duration 1 \
     --transition-bezier 0.4,0.2,0.2,1.0
+
+# Sync dynamic colors with Matugen (smart monochrome support)
+"$HOME/.config/hypr/apply-colors.sh" "$WALLPAPER" >/dev/null 2>&1 &
+

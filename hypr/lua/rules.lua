@@ -44,6 +44,15 @@ hl.window_rule({
     center = true,
 })
 
+hl.window_rule({
+    name = "wallpaper-picker-float",
+    match = { class = "^(org\\.quickshell)$", title = "^(wallpaper-picker)$" },
+    float = true,
+    size = "94% 58%",
+    center = true,
+    pin = true,
+})
+
 hl.layer_rule({
     name = "wofi-blur",
     match = { namespace = "^(wofi)$" },

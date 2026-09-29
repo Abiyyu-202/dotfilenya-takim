@@ -34,6 +34,10 @@ hl.config({
     animations = {
         enabled = true,
     },
+    misc = {
+        key_press_enables_dpms = true,
+        mouse_move_enables_dpms = true,
+    },
 })
 
 hl.curve("easeOutQuint",   { type = "bezier", points = { {0.23, 1},    {0.32, 1}    } })

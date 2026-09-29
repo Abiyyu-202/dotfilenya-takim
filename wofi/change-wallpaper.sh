@@ -20,8 +20,9 @@ THUMB_DIR="$HOME/.cache/wallpaper-thumbs"
 mkdir -p "$THUMB_DIR"
 
 # Generate thumbnails with filename burned at the bottom
-ENTRIES=""
+ENTRIES=()
 for img in "$WALLPAPER_DIR"/*; do
+  [ -f "$img" ] || continue
   filename=$(basename "$img")
   label="${filename}"
   thumb="$THUMB_DIR/${filename}"
@@ -41,11 +42,11 @@ for img in "$WALLPAPER_DIR"/*; do
         "$thumb"
   fi
 
-  ENTRIES+="img:${thumb}:text:${filename}"$'\n'
+  ENTRIES+=("img:${thumb}:text:${filename}")
 done
 
 SELECTED=$(
-  echo -e "$ENTRIES" | $WOFI --conf "$WOFI_CONFIG" --style "$WOFI_STYLE"
+  printf "%s\n" "${ENTRIES[@]}" | $WOFI --conf "$WOFI_CONFIG" --style "$WOFI_STYLE"
 )
 
 [ -z "$SELECTED" ] && exit 0
@@ -56,6 +57,9 @@ WALLPAPER="$WALLPAPER_DIR/$SELECTED_FILE"
 
 cp "$WALLPAPER" "$HOME/.cache/wallpaper_rn.png"
 echo "$WALLPAPER" >"$HOME/.current_wallpaper"
+
+# Generate dynamic color scheme with smart monochrome detection
+"$HOME/.config/hypr/apply-colors.sh" "$WALLPAPER"
 
 # Invalidate wofi background cache so it regenerates on next launch
 rm -f "$HOME/.cache/wofi-bg-src" 2>/dev/null
