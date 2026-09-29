@@ -4,18 +4,18 @@ Personal Linux dotfiles, Tested on Arch, Wayland-based.
 
 ## Setup
 
+Automated setup (installs packages, creates symlinks, and sets up wallpaper picker):
+
 ```bash
 git clone https://github.com/Abiyyu-202/dotfilenya-takim.git ~/dotfiles
 cd ~/dotfiles
+./install.sh
 ```
 
-Symlink whatever you want. (I just threw the repo into ~/.config lmao):
+Or symlink configs only without installing packages:
 
 ```bash
-for dir in fastfetch hypr swaylock waybar wofi niri; do
-  ln -sf $(pwd)/$dir ~/.config/$dir
-done
-cp starship.toml ~/.config/starship.toml
+./install.sh --links-only
 ```
 
 ## Stack
@@ -25,15 +25,26 @@ cp starship.toml ~/.config/starship.toml
 | WM | Hyprland / Niri |
 | Bar | Waybar |
 | Launcher | Wofi |
-| Terminal | Kitty |
-| Lock | Swaylock |
+| Terminal | Ghostty / Kitty |
+| Notification | SwayNC |
+| Theming | Matugen (Material You) |
+| Wallpaper | Quickshell (qs-wallpaper-picker) / awww / swww |
+| Lock & Idle | Hyprlock / Swaylock / Hypridle |
 
 ## Dependencies (Arch)
 
-```bash
-sudo pacman -S wlroots waybar wofi swaync pavucontrol swww grim brightnessctl ttf-jetbrains-mono-nerd ttf-cascadia-code-nerd  woff2-font-awesome nautilus kitty wl-clipboard
+### Official Repositories (Pacman)
 
-yay -S bibata-cursor-theme zen-browser-bin swaylock-effects
+```bash
+sudo pacman -S hyprland waybar wofi swaync pavucontrol grim slurp brightnessctl \
+  imagemagick matugen quickshell awww jq playerctl cava nautilus kitty ghostty \
+  ttf-jetbrains-mono-nerd ttf-font-awesome wl-clipboard hypridle hyprlock
+```
+
+### AUR (yay)
+
+```bash
+yay -S swww swaylock-effects bibata-cursor-theme zen-browser-bin
 ```
 
 ## Links
