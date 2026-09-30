@@ -14,10 +14,10 @@ TARGET_IMG="$WALLPAPER"
 [ -f "$THUMB" ] && TARGET_IMG="$THUMB"
 
 SATURATION=$(magick "$TARGET_IMG" -sample 64x64 -colorspace HSL -channel G -separate +channel -format "%[fx:mean]" info: 2>/dev/null || echo "1")
-IS_MONO=$(awk -v sat="$SATURATION" 'BEGIN { print (sat < 0.10) ? "1" : "0" }')
+IS_MONO=$(awk -v sat="$SATURATION" 'BEGIN { print (sat < 0.03) ? "1" : "0" }')
 
 if [ "$IS_MONO" = "1" ]; then
-    matugen image "$WALLPAPER" --type scheme-monochrome --source-color-index 0
+    matugen image "$WALLPAPER" --mode dark --type scheme-monochrome --source-color-index 0
 else
-    matugen image "$WALLPAPER" --source-color-index 0
+    matugen image "$WALLPAPER" --mode dark --source-color-index 0
 fi

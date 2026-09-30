@@ -9,6 +9,7 @@ post_hook = "pkill -SIGUSR2 waybar"
 [templates.ghostty]
 input_path = "~/.config/matugen/templates/ghostty.conf"
 output_path = "~/.config/ghostty/colors"
+post_hook = "pkill -SIGUSR2 ghostty || true"
 
 [templates.wofi]
 input_path = "~/.config/matugen/templates/wofi.css"
