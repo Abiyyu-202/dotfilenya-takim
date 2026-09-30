@@ -1,7 +1,7 @@
 -- Keybindings
 local home = os.getenv("HOME")
 local mainMod = "SUPER"
-local terminal = "ghostty"
+local terminal = "kitty"
 local fileManager = "nautilus"
 local menu = "wofi --show drun"
 

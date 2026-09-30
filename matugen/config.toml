@@ -11,6 +11,12 @@ input_path = "~/.config/matugen/templates/ghostty.conf"
 output_path = "~/.config/ghostty/colors"
 post_hook = "pkill -SIGUSR2 ghostty || true"
 
+[templates.kitty]
+input_path = "~/.config/matugen/templates/kitty.conf"
+output_path = "~/.config/kitty/colors.conf"
+post_hook = "pkill -SIGUSR1 kitty || true"
+
+
 [templates.wofi]
 input_path = "~/.config/matugen/templates/wofi.css"
 output_path = "~/.config/wofi/colors.css"

@@ -53,6 +53,7 @@ AUR_PKGS=(
 CONFIG_DIRS=(
     fastfetch
     hypr
+    kitty
     matugen
     niri
     swaylock

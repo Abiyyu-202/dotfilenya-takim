@@ -16,7 +16,6 @@ gtk-4.0/
 jgit/
 /kdedefaults/
 /Kingsoft/
-/kitty/
 lazygit/
 /menus/
 /mozilla/
@@ -63,4 +62,5 @@ QtProject.conf
 droidcam
 *colors.css
 /ghostty/colors
+/kitty/colors.conf
 
