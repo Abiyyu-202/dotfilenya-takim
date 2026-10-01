@@ -60,6 +60,7 @@ CONFIG_DIRS=(
     swaync
     waybar
     wofi
+    qs-wallpaper-picker
 )
 
 check_arch() {
@@ -136,17 +137,6 @@ setup_symlinks() {
     fi
 }
 
-setup_wallpaper_picker() {
-    target_dir="$CONFIG_DIR/qs-wallpaper-picker"
-    if [ ! -d "$target_dir" ]; then
-        log_info "Mengunduh qs-wallpaper-picker ke $target_dir..."
-        git clone https://github.com/magetsu002/qs-wallpaper-picker.git "$target_dir"
-        log_ok "qs-wallpaper-picker berhasil diunduh."
-    else
-        log_ok "qs-wallpaper-picker sudah ada di $target_dir."
-    fi
-}
-
 fix_permissions() {
     log_info "Memastikan permission execute pada script..."
     find "$DOTFILES_DIR" -type f \( -name "*.sh" -o -name "*.py" \) -exec chmod +x {} + 2>/dev/null || true
@@ -182,7 +172,6 @@ main() {
     fi
 
     setup_symlinks
-    setup_wallpaper_picker
     fix_permissions
 
     echo
