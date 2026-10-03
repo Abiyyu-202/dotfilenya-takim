@@ -32,6 +32,12 @@ output "eDP-1" {
     }
 }
 
+workspace "1"
+workspace "2"
+workspace "3"
+
+
+
 layout {
     gaps 16
     center-focused-column "never"
@@ -90,11 +96,36 @@ hotkey-overlay {
     skip-at-startup
 }
 
-screenshot-path "~/skrinsut/niri/skrinsut niri from %Y-%m-%d %H-%M-%S.png"
+screenshot-path "~/skrinsut/niri/skrinsut-niri-%Y-%m-%d_%H-%M-%S.png"
 
 animations {
-    // off
-    // slowdown 3.0
+    workspace-switch {
+        spring damping-ratio=1.0 stiffness=1000 epsilon=0.0001
+    }
+    horizontal-view-movement {
+        spring damping-ratio=1.0 stiffness=900 epsilon=0.0001
+    }
+    window-movement {
+        spring damping-ratio=1.0 stiffness=900 epsilon=0.0001
+    }
+    window-resize {
+        spring damping-ratio=1.0 stiffness=900 epsilon=0.0001
+    }
+    window-open {
+        duration-ms 200
+        curve "ease-out-expo"
+    }
+    window-close {
+        duration-ms 180
+        curve "ease-out-quad"
+    }
+    overview-open-close {
+        spring damping-ratio=1.0 stiffness=900 epsilon=0.0001
+    }
+    screenshot-ui-open {
+        duration-ms 180
+        curve "ease-out-quad"
+    }
 }
 
 
@@ -113,6 +144,18 @@ window-rule {
 window-rule {
     match app-id="kitty"
     opacity 0.95
+    open-maximized true
+}
+
+window-rule {
+    match app-id=r#"org\.quickshell$"#
+    match title="^wallpaper-picker$"
+    open-floating true
+}
+
+window-rule {
+    match title="^wallpaper-picker$"
+    open-floating true
 }
 
 /-window-rule {
@@ -127,7 +170,7 @@ window-rule {
 }
 
 window-rule {
-    geometry-corner-radius 5
+    geometry-corner-radius 7
     clip-to-geometry true
 }
 
@@ -149,7 +192,8 @@ binds {
 
     // System controls
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "hyprlock"; }
-    Super+Ctrl+W { spawn "~/.config/wofi/change-wallpaper.sh"; }
+    Super+Ctrl+W { spawn "~/.config/qs-wallpaper-picker/scripts/open_picker.sh"; }
+    Mod+Ctrl+W { spawn "~/.config/qs-wallpaper-picker/scripts/open_picker.sh"; }
     Super+ctrl+e { spawn "wofi-emoji"; }
     Mod+V { spawn "sh" "-c" "cliphist list | wofi --dmenu | cliphist decode | wl-copy"; }
     Mod+Shift+W hotkey-overlay-title="Reload Waybar" { spawn "sh" "-c" "pkill waybar; waybar &"; }
@@ -286,6 +330,8 @@ binds {
     // Mod+Space       { switch-layout "next"; }
     // Mod+Shift+Space { switch-layout "prev"; }
 
+    Mod+Shift+S { screenshot; }
+    Mod+Alt+S { screenshot-screen; }
     Print { screenshot; }
     Ctrl+Print { screenshot-screen; }
     Alt+Print { screenshot-window; }

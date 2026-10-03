@@ -38,6 +38,7 @@
         "spacing": 0,
         "modules": [
             "mpris",
+            "niri/window",
             "hyprland/window"
         ]
     },
@@ -124,6 +125,18 @@
     },
 
     // ── Workspaces ──────────────────────────────────────
+    "niri/workspaces": {
+        "format": "{icon}",
+        "sort-by-name": true,
+        "display-condition": "keep-named",
+        "format-icons": {
+            "focused": "",
+            "active": "",
+            "default": "",
+            "empty": ""
+        }
+    },
+
     "hyprland/workspaces": {
         "format": "{icon}",
         "sort-by-number": true,
@@ -134,6 +147,19 @@
             "active": "",
             "empty": "",
             "default": ""
+        }
+    },
+
+    // ── Niri Window Title ───────────────────────────────
+    "niri/window": {
+        "format": "{}",
+        "separate-outputs": true,
+        "max-length": 50,
+        "icon": true,
+        "icon-size": 14,
+        "show-empty": true,
+        "rewrite": {
+            "^$": "󰇄  Desktop"
         }
     },
 
