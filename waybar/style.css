@@ -316,17 +316,21 @@ box#status #battery:hover {
 
 /* ── Center pill (Window title + MPRIS unified) ────── */
 box#center {
-    padding: 0 8px;
+    padding: 0 10px;
 }
 
 box#center #window,
 box#center #custom-window-title {
     background: transparent;
     border: none;
-    padding: 0 6px;
+    padding: 0;
     margin: 0;
     color: rgba(255, 255, 255, 0.85);
     font-weight: 500;
+}
+
+box#center #window image {
+    margin-right: 6px;
 }
 
 window#waybar.empty box#center #window {
@@ -336,7 +340,7 @@ window#waybar.empty box#center #window {
 box#center #mpris {
     background: transparent;
     border: none;
-    padding: 0 6px;
+    padding: 0;
     margin: 0;
     color: #a6e3a1;
     font-weight: 500;
@@ -353,9 +357,9 @@ box#center #mpris.paused {
 
 box#center #mpris.playing,
 box#center #mpris.paused {
+    padding-right: 8px;
+    margin-right: 6px;
     border-right: 1px solid alpha(@outline_variant, 0.25);
-    margin-right: 4px;
-    padding-right: 10px;
 }
 
 /* ── Weather inside info pill ──────────────────────── */
