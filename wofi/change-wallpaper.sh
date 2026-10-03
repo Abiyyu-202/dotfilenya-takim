@@ -23,6 +23,7 @@ mkdir -p "$THUMB_DIR"
 ENTRIES=()
 for img in "$WALLPAPER_DIR"/*; do
   [ -f "$img" ] || continue
+  case "${img##*.}" in png|jpg|jpeg|webp|gif|PNG|JPG|JPEG|WEBP|GIF) ;; *) continue ;; esac
   filename=$(basename "$img")
   label="${filename}"
   thumb="$THUMB_DIR/${filename}"
