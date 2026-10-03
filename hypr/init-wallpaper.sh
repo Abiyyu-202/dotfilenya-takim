@@ -12,7 +12,7 @@ if [ -f "$HOME/.current_wallpaper" ]; then
 fi
 
 if [ -z "$WALLPAPER" ] || [ ! -f "$WALLPAPER" ]; then
-    WALLPAPER="$HOME/.config/hypr/wallpaper/arch-minimal.png"
+    WALLPAPER="$HOME/.config/wallpaper/arch-minimal.png"
     echo "$WALLPAPER" > "$HOME/.current_wallpaper"
     mkdir -p "$HOME/.cache"
     cp "$WALLPAPER" "$HOME/.cache/wallpaper_rn.png"

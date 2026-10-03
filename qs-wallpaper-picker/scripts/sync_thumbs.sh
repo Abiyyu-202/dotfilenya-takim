@@ -9,7 +9,7 @@ SCRIPT_DIR="$(
 # shellcheck source=cache_paths.sh
 source "$SCRIPT_DIR/cache_paths.sh"
 
-SOURCE_DIR="${1:-${QS_WALLPAPER_DIR:-$HOME/.config/hypr/wallpaper}}"
+SOURCE_DIR="${1:-${QS_WALLPAPER_DIR:-$HOME/.config/wallpaper}}"
 THUMB_DIR="$(wallpaper_cache_dir)/thumbs"
 
 if [[ ! -d "$SOURCE_DIR" ]]; then

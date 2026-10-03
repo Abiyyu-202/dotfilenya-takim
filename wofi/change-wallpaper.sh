@@ -12,7 +12,7 @@ WOFI="/usr/bin/wofi"
 HYPRCTL="/usr/bin/hyprctl"
 JQ="/usr/bin/jq"
 
-WALLPAPER_DIR="$HOME/.config/hypr/wallpaper"
+WALLPAPER_DIR="$HOME/.config/wallpaper"
 WOFI_CONFIG="$HOME/.config/wofi/wallpaper-config"
 WOFI_STYLE="$HOME/.config/wofi/wallpaper-style.css"
 THUMB_DIR="$HOME/.cache/wallpaper-thumbs"

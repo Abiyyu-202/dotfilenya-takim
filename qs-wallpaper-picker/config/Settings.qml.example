@@ -11,7 +11,7 @@ QtObject {
     property string wallpaperDir:
         configuredWallpaperDir !== ""
             ? configuredWallpaperDir
-            : homeDir + "/Wallpapers"
+            : homeDir + "/.config/wallpaper"
     readonly property string cacheHome:
         configuredCacheHome !== ""
             ? configuredCacheHome

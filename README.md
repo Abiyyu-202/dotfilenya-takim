@@ -49,7 +49,7 @@ yay -S swww swaylock-effects bibata-cursor-theme zen-browser-bin
 
 ## Links
 
-- [Wallpaper Previews](hypr/wallpaper/preview.md)
+- [Wallpaper Previews](wallpaper/preview.md)
 - [Hyprland Wiki](https://wiki.hypr.land/)
 - [Niri](https://github.com/YaLTeR/niri)
 - [Nerd Fonts](https://www.nerdfonts.com/)

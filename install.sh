@@ -61,6 +61,7 @@ CONFIG_DIRS=(
     waybar
     wofi
     qs-wallpaper-picker
+    wallpaper
 )
 
 check_arch() {

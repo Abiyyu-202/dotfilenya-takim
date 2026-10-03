@@ -10,7 +10,7 @@ SCRIPT_DIR="$(
 source "$SCRIPT_DIR/cache_paths.sh"
 
 LAST="$(wallpaper_cache_dir)/last_wallpaper"
-DEFAULT_SOURCE="${QS_WALLPAPER_DIR:-$HOME/.config/hypr/wallpaper}"
+DEFAULT_SOURCE="${QS_WALLPAPER_DIR:-$HOME/.config/wallpaper}"
 
 [[ -f "$LAST" ]] || exit 0
 

@@ -14,7 +14,7 @@ PROJECT_DIR="$(
 # shellcheck source=cache_paths.sh
 source "$SCRIPT_DIR/cache_paths.sh"
 
-WALLPAPER_DIR="${QS_WALLPAPER_DIR:-$HOME/.config/hypr/wallpaper}"
+WALLPAPER_DIR="${QS_WALLPAPER_DIR:-$HOME/.config/wallpaper}"
 STATE_DIR="$(wallpaper_cache_dir)"
 SETTINGS_FILE="$PROJECT_DIR/config/Settings.qml"
 SETTINGS_TEMPLATE="$PROJECT_DIR/config/Settings.qml.example"
