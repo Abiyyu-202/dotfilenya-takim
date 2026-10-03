@@ -27,7 +27,8 @@ tooltip label {
 
 /* ── Shared pill base ──────────────────────────────── */
 #workspaces,
-#custom-window-title,
+box#center,
+box#info,
 #tray,
 #custom-power {
     background-color: alpha(@surface, 0.85);
@@ -38,14 +39,17 @@ tooltip label {
     transition: background-color 300ms ease, border-color 300ms ease;
 }
 
-/* ── Clock drawer pill ─────────────────────────────── */
-box#clock {
-    background-color: alpha(@surface, 0.85);
-    border: 1px solid alpha(@outline_variant, 0.2);
-    border-radius: 999px;
-    padding: 0 3px;
-    margin: 3px 2px;
-    transition: background-color 300ms ease, border-color 300ms ease;
+/* ── Info pill (Clock + Weather unified) ───────────── */
+box#info {
+    padding: 0 4px;
+}
+
+box#info box#clock {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
 }
 
 box#clock #clock {
@@ -112,6 +116,7 @@ box#clock #clock {
 }
 
 /* ── Window title (center) ─────────────────────────── */
+#window,
 #custom-window-title {
     color: rgba(255, 255, 255, 0.75);
     font-weight: 500;
@@ -307,4 +312,61 @@ box#status #battery:hover {
 
 #battery.critical:not(.charging) {
     color: #e06c75;
+}
+
+/* ── Center pill (Window title + MPRIS unified) ────── */
+box#center {
+    padding: 0 8px;
+}
+
+box#center #window,
+box#center #custom-window-title {
+    background: transparent;
+    border: none;
+    padding: 0 6px;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 500;
+}
+
+window#waybar.empty box#center #window {
+    color: alpha(@on_surface, 0.45);
+}
+
+box#center #mpris {
+    background: transparent;
+    border: none;
+    padding: 0 6px;
+    margin: 0;
+    color: #a6e3a1;
+    font-weight: 500;
+    transition: color 200ms ease;
+}
+
+box#center #mpris:hover {
+    color: #ffffff;
+}
+
+box#center #mpris.paused {
+    color: alpha(@on_surface, 0.55);
+}
+
+box#center #mpris.playing,
+box#center #mpris.paused {
+    border-right: 1px solid alpha(@outline_variant, 0.25);
+    margin-right: 4px;
+    padding-right: 10px;
+}
+
+/* ── Weather inside info pill ──────────────────────── */
+box#info #custom-weather {
+    background: transparent;
+    border: none;
+    border-left: 1px solid alpha(@outline_variant, 0.25);
+    border-radius: 0;
+    padding: 0 8px 0 6px;
+    margin: 0;
+    font-size: 12px;
+    font-weight: 600;
+    color: alpha(@on_surface, 0.85);
 }

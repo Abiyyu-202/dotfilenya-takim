@@ -8,13 +8,13 @@
     "fixed-center": true,
 
     "modules-left": [
-        "group/clock",
+        "group/info",
         "niri/workspaces",
         "hyprland/workspaces"
     ],
 
     "modules-center": [
-        "custom/window-title"
+        "group/center"
     ],
 
     "modules-right": [
@@ -22,6 +22,24 @@
         "group/status",
         "custom/power"
     ],
+
+    // ── Unified Info Pill (Clock + Weather) ─────────────
+    "group/info": {
+        "orientation": "horizontal",
+        "modules": [
+            "group/clock",
+            "custom/weather"
+        ]
+    },
+
+    // ── Unified Center Pill (MPRIS + Window Title) ──────
+    "group/center": {
+        "orientation": "horizontal",
+        "modules": [
+            "mpris",
+            "hyprland/window"
+        ]
+    },
 
     // ── Drawer: Clock (time → date on hover) ───────────
     "group/clock": {
@@ -118,12 +136,14 @@
         }
     },
 
-    // ── Window title (center) ───────────────────────────
-    "custom/window-title": {
-        "exec": "~/.config/waybar/window-title.sh",
-        "return-type": "json",
-        "interval": 1,
-        "max-length": 50
+    // ── Hyprland Window Title ───────────────────────────
+    "hyprland/window": {
+        "format": "{}",
+        "separate-outputs": true,
+        "max-length": 50,
+        "fallback": "󰇄  Desktop",
+        "icon": true,
+        "icon-size": 14
     },
 
     // ── Clock (time only) ───────────────────────────────
@@ -248,5 +268,39 @@
             "logout": "hyprctl dispatch 'hl.dsp.exit()' || pkill -x Hyprland",
             "lock": "hyprlock"
         }
+    },
+
+    // ── Weather ─────────────────────────────────────────
+    "custom/weather": {
+        "exec": "~/.config/waybar/scripts/weather.sh",
+        "return-type": "json",
+        "interval": 1800,
+        "format": "{}"
+    },
+
+    // ── Media Player (MPRIS) ────────────────────────────
+    "mpris": {
+        "format": "{player_icon}  {dynamic}",
+        "format-paused": "{status_icon}  <i>{dynamic}</i>",
+        "format-stopped": "",
+        "player-icons": {
+            "default": "",
+            "spotify": "",
+            "firefox": "",
+            "chromium": "",
+            "mpv": ""
+        },
+        "status-icons": {
+            "paused": ""
+        },
+        "max-length": 32,
+        "tooltip": true,
+        "tooltip-format": "{player_icon} {player} ({status})\n󰎆 {title}\n󰠃 {artist}\n󰀥 {album}\n󱑂 [{position}/{length}]\n\n🖱️ Klik Kiri: Play/Pause\n🖱️ Klik Kanan: Next Track\n🖱️ Klik Tengah: Prev Track\n🔄 Scroll: Seek Lagu (±5s)",
+        "tooltip-format-paused": "{status_icon} {player} (Paused)\n󰎆 {title}\n󰠃 {artist}\n󰀥 {album}\n󱑂 [{position}/{length}]\n\n🖱️ Klik Kiri: Resume\n🖱️ Klik Kanan: Next Track\n🖱️ Klik Tengah: Prev Track\n🔄 Scroll: Seek Lagu (±5s)",
+        "on-click": "playerctl play-pause",
+        "on-click-right": "playerctl next",
+        "on-click-middle": "playerctl previous",
+        "on-scroll-up": "playerctl position 5+",
+        "on-scroll-down": "playerctl position 5-"
     }
 }

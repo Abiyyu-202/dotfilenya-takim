@@ -11,11 +11,15 @@ elif command -v niri-msg >/dev/null 2>&1; then
   class=$(jq -r '.app_id // ""' <<<"$json")
   title=$(jq -r '.title // ""' <<<"$json")
 else
+  printf '{"text":"󰇄  No apps opened","tooltip":"Desktop"}\n'
   exit 0
 fi
 
 # Validation
-[[ -z "$title" || "$json" == "null" || "$json" == "{}" ]] && exit 0
+if [[ -z "$title" || "$json" == "null" || "$json" == "{}" ]]; then
+  printf '{"text":"󰇄  No apps opened","tooltip":"Desktop"}\n'
+  exit 0
+fi
 
 # Normalize title (UTF-8 SAFE)
 title=$(printf '%s' "$title" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
