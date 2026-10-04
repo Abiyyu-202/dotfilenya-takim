@@ -199,15 +199,15 @@ binds {
     Mod+Shift+W hotkey-overlay-title="Reload Waybar" { spawn "sh" "-c" "pkill waybar; waybar &"; }
     Mod+N { spawn "swaync-client -t"; }
 
-    // Audio
-    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-"; }
-    XF86AudioMute allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
-    XF86AudioMicMute allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+    // Audio (with OSD)
+    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "~/.config/hypr/scripts/osd.sh volume-up"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "~/.config/hypr/scripts/osd.sh volume-down"; }
+    XF86AudioMute allow-when-locked=true { spawn-sh "~/.config/hypr/scripts/osd.sh volume-mute"; }
+    XF86AudioMicMute allow-when-locked=true { spawn-sh "~/.config/hypr/scripts/osd.sh mic-mute"; }
 
-    // Brightness
-    XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
+    // Brightness (with OSD)
+    XF86MonBrightnessUp allow-when-locked=true { spawn-sh "~/.config/hypr/scripts/osd.sh brightness-up"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn-sh "~/.config/hypr/scripts/osd.sh brightness-down"; }
 
     // Window focus
     Alt+Tab repeat=false { toggle-overview; }

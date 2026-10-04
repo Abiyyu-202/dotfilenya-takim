@@ -68,39 +68,39 @@ hl.bind(mainMod .. " + SHIFT + L", hl.dsp.window.move({ workspace = "+1" }))
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
--- Multimedia and Brightness
+-- Multimedia and Brightness (with OSD)
 hl.bind(
 	"XF86AudioRaiseVolume",
-	hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"),
+	hl.dsp.exec_cmd(home .. "/.config/hypr/scripts/osd.sh volume-up"),
 	{ locked = true, repeating = true }
 )
 hl.bind(
 	"XF86AudioLowerVolume",
-	hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),
+	hl.dsp.exec_cmd(home .. "/.config/hypr/scripts/osd.sh volume-down"),
 	{ locked = true, repeating = true }
 )
 hl.bind(
 	mainMod .. " + XF86AudioRaiseVolume",
-	hl.dsp.exec_cmd("brightnessctl -s set 10%+"),
+	hl.dsp.exec_cmd(home .. "/.config/hypr/scripts/osd.sh brightness-up"),
 	{ locked = true, repeating = true }
 )
 hl.bind(
 	mainMod .. " + XF86AudioLowerVolume",
-	hl.dsp.exec_cmd("brightnessctl -s set 10%-"),
+	hl.dsp.exec_cmd(home .. "/.config/hypr/scripts/osd.sh brightness-down"),
 	{ locked = true, repeating = true }
 )
 hl.bind(
 	"XF86AudioMute",
-	hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"),
+	hl.dsp.exec_cmd(home .. "/.config/hypr/scripts/osd.sh volume-mute"),
 	{ locked = true, repeating = true }
 )
 hl.bind(
 	"XF86AudioMicMute",
-	hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),
+	hl.dsp.exec_cmd(home .. "/.config/hypr/scripts/osd.sh mic-mute"),
 	{ locked = true, repeating = true }
 )
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -s set 10%+"), { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -s set 10%-"), { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd(home .. "/.config/hypr/scripts/osd.sh brightness-up"), { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(home .. "/.config/hypr/scripts/osd.sh brightness-down"), { locked = true, repeating = true })
 
 -- Media controls
 hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })

@@ -381,6 +381,16 @@ box#center #mpris.paused {
     border-right: 1px solid alpha(@outline_variant, 0.25);
 }
 
+box#center #custom-cava {
+    background: transparent;
+    border: none;
+    padding: 0 6px 0 2px;
+    margin: 0;
+    color: @primary;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
 /* ── Weather inside info pill ──────────────────────── */
 box#info #custom-weather {
     background: transparent;

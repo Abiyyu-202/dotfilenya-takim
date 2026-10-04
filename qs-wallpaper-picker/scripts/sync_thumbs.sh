@@ -9,7 +9,7 @@ SCRIPT_DIR="$(
 # shellcheck source=cache_paths.sh
 source "$SCRIPT_DIR/cache_paths.sh"
 
-SOURCE_DIR="${1:-${QS_WALLPAPER_DIR:-$HOME/.config/wallpaper}}"
+SOURCE_DIR="$(realpath "${1:-${QS_WALLPAPER_DIR:-$HOME/.config/wallpaper}}")"
 THUMB_DIR="$(wallpaper_cache_dir)/thumbs"
 
 if [[ ! -d "$SOURCE_DIR" ]]; then
@@ -83,7 +83,7 @@ while IFS= read -r -d '' source; do
             ;;
     esac
 done < <(
-    find "$SOURCE_DIR" \
+    find -L "$SOURCE_DIR" \
         -maxdepth 1 \
         -type f \
         -print0

@@ -44,7 +44,10 @@
   "notification-visibility": {
   },
   "widgets": [
-    "inhibitors",
+    "buttons-grid",
+    "mpris",
+    "volume",
+    "backlight",
     "title",
     "dnd",
     "notifications"
@@ -52,11 +55,6 @@
   "widget-config": {
     "notifications": {
       "vexpand": true
-    },
-    "inhibitors": {
-      "text": "Inhibitors",
-      "button-text": "Clear All",
-      "clear-all-button": true
     },
     "title": {
       "text": "Notifications",
@@ -66,25 +64,54 @@
     "dnd": {
       "text": "Do Not Disturb"
     },
-    "label": {
-      "max-lines": 5,
-      "text": "Label Text"
+    "volume": {
+      "label": "󰕾",
+      "show-per-app": false,
+      "animation-type": "slide_down",
+      "animation-duration": 200
+    },
+    "backlight": {
+      "label": "󰃠",
+      "device": "intel_backlight",
+      "min": 5
     },
     "mpris": {
       "blacklist": [],
-      "autohide": false,
-      "show-album-art": "always",
+      "autohide": true,
+      "show-album-art": "when-available",
       "loop-carousel": false
     },
     "buttons-grid": {
-      "buttons-per-row": 7,
+      "buttons-per-row": 5,
       "actions": [
         {
-          "label": "直",
+          "label": "󰖩",
           "type": "toggle",
           "active": true,
           "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && nmcli radio wifi on || nmcli radio wifi off'",
           "update-command": "sh -c '[[ $(nmcli radio wifi) == \"enabled\" ]] && echo true || echo false'"
+        },
+        {
+          "label": "󰂯",
+          "type": "toggle",
+          "active": false,
+          "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && bluetoothctl power on || bluetoothctl power off'",
+          "update-command": "sh -c 'bluetoothctl show | grep -q \"Powered: yes\" && echo true || echo false'"
+        },
+        {
+          "label": "󰸉",
+          "type": "normal",
+          "command": "sh -c '~/.config/qs-wallpaper-picker/scripts/open_picker.sh'"
+        },
+        {
+          "label": "󰄄",
+          "type": "normal",
+          "command": "sh -c 'file=~/skrinsut/hyprland/skrinsut-$(date +%F_%H-%M-%S).png; mkdir -p ~/skrinsut/hyprland; grim -g \"$(slurp)\" \"$file\" && wl-copy < \"$file\"'"
+        },
+        {
+          "label": "⏻",
+          "type": "normal",
+          "command": "sh -c '~/.config/wofi/powermenu.sh'"
         }
       ]
     }

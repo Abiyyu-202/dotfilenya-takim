@@ -38,6 +38,7 @@
         "spacing": 0,
         "modules": [
             "mpris",
+            "custom/cava",
             "niri/window",
             "hyprland/window"
         ]
@@ -148,6 +149,13 @@
             "empty": "",
             "default": ""
         }
+    },
+
+    // ── Cava Audio Visualizer ──────────────────────────
+    "custom/cava": {
+        "exec": "~/.config/waybar/scripts/cava.py",
+        "format": "{}",
+        "tooltip": false
     },
 
     // ── Niri Window Title ───────────────────────────────

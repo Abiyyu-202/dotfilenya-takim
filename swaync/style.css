@@ -467,12 +467,33 @@ notificationwindow, blankwindow {
 }
 
 /* Buttons widget */
+.widget-buttons-grid {
+  margin: 10px 16px;
+  padding: 4px;
+}
+
 .widget-buttons-grid flowboxchild > button {
-  border-radius: var(--border-radius);
+  background-color: alpha(@surface_container_high, 0.85);
+  color: @on_surface;
+  border: 1px solid alpha(@outline_variant, 0.25);
+  border-radius: 14px;
+  padding: 12px 16px;
+  font-size: 16px;
+  min-width: 48px;
+  min-height: 48px;
+  transition: all 200ms ease;
+}
+
+.widget-buttons-grid flowboxchild > button:hover {
+  background-color: alpha(@primary, 0.25);
+  border-color: alpha(@primary, 0.6);
+  color: @primary;
 }
 
 .widget-buttons-grid flowboxchild > button.toggle:checked {
-  /* style given to the active toggle button */
+  background-color: @primary;
+  color: @on_primary;
+  border-color: @primary;
 }
 
 /* Menubar widget */
@@ -528,29 +549,44 @@ notificationwindow, blankwindow {
   margin-bottom: 0;
 }
 
-/* Volume widget */
-:root {
-  --widget-volume-row-icon-size: 24px;
+/* Volume & Backlight widgets */
+.widget-volume,
+.widget-backlight {
+  background-color: alpha(@surface_container_high, 0.6);
+  border: 1px solid alpha(@outline_variant, 0.2);
+  border-radius: 14px;
+  padding: 8px 16px;
+  margin: 6px 16px;
 }
 
-/* Each row app icon */
-.widget-volume row image {
-  -gtk-icon-size: var(--widget-volume-row-icon-size);
+.widget-volume > box > label,
+.widget-backlight > box > label {
+  font-size: 1.15rem;
+  color: @primary;
+  margin-right: 12px;
 }
 
-.per-app-volume {
-  background-color: var(--noti-bg-alt);
-  margin: 8px;
-  margin-bottom: 0;
-  border-radius: var(--border-radius);
+.widget-volume scale trough,
+.widget-backlight scale trough {
+  background-color: alpha(@outline_variant, 0.35);
+  border-radius: 999px;
+  min-height: 8px;
 }
 
-/* Slider widget */
-.widget-slider label {
-  font-size: inherit;
+.widget-volume scale highlight,
+.widget-backlight scale highlight {
+  background-color: @primary;
+  border-radius: 999px;
 }
 
-/* Backlight widget */
+.widget-volume scale slider,
+.widget-backlight scale slider {
+  background-color: @primary;
+  border-radius: 999px;
+  min-width: 16px;
+  min-height: 16px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+}
 /* Inhibitors widget */
 .widget-inhibitors > label {
   margin-right: 8px;
